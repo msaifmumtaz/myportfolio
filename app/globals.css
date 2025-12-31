@@ -1,26 +1,156 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors are now defined via CSS variables to support dark mode switching */
+  --color-bg-core: var(--bg-core);
+  --color-bg-surface-1: var(--bg-surface-1);
+  --color-bg-surface-2: var(--bg-surface-2);
+  
+  --color-primary-indigo: var(--primary-indigo);
+  --color-primary-indigo-dim: var(--primary-indigo-dim);
+  
+  --color-secondary-rose: var(--secondary-rose);
+  
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  
+  --color-border-subtle: var(--border-subtle);
+
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-code: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Custom Utilities */
+@utility glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+}
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light Mode */
+    --bg-core: #ffffff;
+    --bg-surface-1: #f8f9fa;
+    --bg-surface-2: #f3f4f6;
+
+    /* Indigo 600 */
+    --primary-indigo: #4f46e5;
+    /* Indigo 800 */
+    --primary-indigo-dim: #3730a3;
+
+    /* Rose 500 */
+    --secondary-rose: #f43f5e;
+
+    --text-main: #171717;
+    --text-muted: #64748b;
+
+    --border-subtle: #e2e8f0;
+    
+    --glass-bg: rgba(255, 255, 255, 0.7);
+
+    --bg-grid-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .dark {
+    /* Dark Mode */
+    --bg-core: #000000;
+    --bg-surface-1: #0a0a0a;
+    --bg-surface-2: #111111;
+
+    /* Indigo 500 */
+    --primary-indigo: #6366f1;
+    /* Indigo 400 */
+    --primary-indigo-dim: #818cf8;
+
+    /* Rose 400 */
+    --secondary-rose: #fb7185;
+
+    --text-main: #ededed;
+    --text-muted: #888888;
+
+    --border-subtle: #333333;
+    
+    --glass-bg: rgba(10, 10, 10, 0.7);
+
+    --bg-grid-color: rgba(255, 255, 255, 0.04);
+  }
+
+  body {
+    background-color: var(--color-bg-core);
+    background-image: linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
+                      linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Prose overrides - outside @layer for higher specificity */
+.prose {
+  color: var(--text-main) !important;
+}
+
+.prose p,
+.prose li,
+.prose ul,
+.prose ol {
+  color: var(--text-main) !important;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--text-main) !important;
+}
+
+.prose strong,
+.prose b {
+  color: var(--text-main) !important;
+}
+
+.prose a {
+  color: var(--primary-indigo) !important;
+}
+
+.prose blockquote {
+  color: var(--text-main) !important;
+  border-left-color: var(--primary-indigo) !important;
+}
+
+.prose code {
+  font-family: var(--font-code);
+  background-color: var(--bg-surface-1) !important;
+  color: var(--secondary-rose) !important;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.prose pre {
+  background-color: var(--bg-surface-2) !important;
+}
+
+.prose pre code {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  padding: 0;
+}
+
+.prose hr {
+  border-color: var(--border-subtle) !important;
+}
+
+.prose ::marker {
+  color: var(--text-muted) !important;
 }
