@@ -4,8 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Twitter, Mail, ExternalLink, Loader2, Phone } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Loader2, Phone, Calendar } from "lucide-react";
 import { socialLinks } from "@/data/config";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -97,6 +98,12 @@ export default function ContactPage() {
               <div>
                 <div className="text-sm text-text-muted">Email</div>
                 <div className="text-lg font-medium"><a href={`mailto:${socialLinks.email}`}>{socialLinks.email}</a></div>
+              </div>
+              <div className="w-12 h-12 bg-bg-surface-2 rounded-full flex items-center justify-center text-primary-indigo">
+                <Calendar />
+              </div>
+              <div>
+                <div className="text-md font-medium flex items-center gap-2 border border-border-subtle rounded-md p-2"><a href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer"><ExternalLink />Schedule a Meeting</a></div>
               </div>
             </div>
             {/* Social Icons */}

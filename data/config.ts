@@ -65,7 +65,7 @@ export const homePageContent = {
   tech_ticker: ["Python", "TensorFlow", "PyTorch", "GPT-4", "Next.js", "React", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Linux", "C/C++", "C#"],
   stats: [
     { label: "Years Experience", value: "8+" },
-    { label: "Jobs Completed", value: "60+" },
+    { label: "Jobs Completed", value: "67+" },
     { label: "AI Models Deployed", value: "20+" },
   ],
   skills: [
@@ -218,8 +218,9 @@ export const footerContent = {
       title: "Quick Links", 
       links: [
         { label: "About Me", href: "/about" },
+        { label: "Contact", href: "/contact" },
         { label: "Projects", href: "/projects" },
-        { label: "Blog", href: "/blog" }
+        { label: "Schedule a Meeting", href: "https://calendly.com/ch-saif109/30min" }
       ] 
     },
     { 

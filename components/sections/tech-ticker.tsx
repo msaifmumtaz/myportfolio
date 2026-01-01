@@ -14,7 +14,7 @@ export function TechTicker() {
           className="flex gap-16 px-8"
           animate={{ x: "-50%" }}
           transition={{
-            duration: 20,
+            duration: 70,
             repeat: Infinity,
             ease: "linear",
           }}

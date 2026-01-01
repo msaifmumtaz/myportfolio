@@ -8,6 +8,7 @@ import { navigation, siteConfig } from "@/data/config";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "../ui/button";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -52,6 +53,7 @@ export function Navbar() {
             </Link>
           ))}
           <ModeToggle />
+          <Button variant="primary" size="default"><Link href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer">Schedule a Meeting</Link></Button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -88,6 +90,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Button variant="primary" size="default"><Link href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer">Schedule a Meeting</Link></Button>
           </nav>
         </motion.div>
       )}

@@ -100,7 +100,7 @@ export function Hero() {
                 src="/profile.png"
                 alt="Profile"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
