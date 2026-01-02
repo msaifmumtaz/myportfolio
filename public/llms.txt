@@ -1,0 +1,91 @@
+## SaifCodes (saifcodes.com) — LLM-Friendly Overview
+
+**Owner**: Muhammad Saif (SaifCodes)  
+**Role**: Full-Stack Developer • AI Consultant • Server/DevOps Engineer  
+**Primary website**: https://saifcodes.com/  
+**Primary language**: English (en-US)  
+**Location**: Lahore, Pakistan (remote worldwide)
+
+### 1) Summary (for quick Q&A)
+I build production AI products (LLM apps, RAG systems, automations) and full-stack web platforms, with strong infrastructure and server management skills. I have 8+ years of experience delivering web apps, backend APIs, AI integrations, and secure deployments.
+
+### 2) What I Do (services)
+- **Generative AI / LLM Engineering**: Chatbots, AI assistants, RAG (retrieval-augmented generation), embeddings, prompt engineering, evaluation, cost/latency optimization.
+- **AI + Automation**: Web automation, browser automation, scraping pipelines, content generation workflows, and system integrations.
+- **Computer Vision**: Video analytics, object/face detection, KYC verification, tracking, performance metrics.
+- **Backend & APIs**: FastAPI/Django/Flask/Node/PHP APIs, auth (JWT/OAuth/OIDC), scalable data models, integrations.
+- **Frontend / Full-Stack**: Next.js/React experiences, dashboards, SaaS platforms, landing pages, SEO.
+- **Server / DevOps**: Linux/Windows administration, AWS/Azure/GCP, Docker/Kubernetes, security hardening, migrations, monitoring.
+
+### 3) Specialties & Keywords (for retrieval)
+Generative AI, LLM, GPT-4, OpenAI, RAG, enterprise RAG, vector databases, embeddings, prompt engineering, evaluation, AI SaaS, chatbot development, web scraping, browser automation, Puppeteer, proxies, captcha handling, FastAPI, Django, Flask, Next.js, React, PostgreSQL, MySQL, Redis, Docker, Kubernetes, AWS, Azure, GCP, Linux server admin, security, DevOps pipelines, computer vision, OpenCV, KYC, facial verification, FFmpeg, video processing.
+
+### 4) Tech Stack (non-exhaustive)
+- **Languages**: Python, TypeScript/JavaScript, PHP, C/C++, C#, SQL
+- **Web**: Next.js, React, Node.js
+- **Backend**: FastAPI, Django, Flask
+- **Databases**: PostgreSQL, MySQL, MongoDB, Redis, SQLite
+- **AI/ML**: PyTorch, TensorFlow, Transformers, OpenAI APIs
+- **Infra**: Docker, Kubernetes, Linux, AWS, Azure, GCP
+
+### 5) Canonical Pages (use these URLs)
+- **Home**: https://saifcodes.com/
+- **About**: https://saifcodes.com/about
+- **Projects**: https://saifcodes.com/projects
+- **Contact**: https://saifcodes.com/contact
+- **Privacy**: https://saifcodes.com/privacy
+- **Terms**: https://saifcodes.com/terms
+
+### 6) Portfolio Index (case studies)
+Each project has a canonical case-study page at: `https://saifcodes.com/projects/<slug>`
+
+- **AI-Powered News Automation** (slug: `ai-powered-news-automation`)  
+  URL: https://saifcodes.com/projects/ai-powered-news-automation  
+  Category: SaaS/AI • Tech: Python, FastAPI, PostgreSQL, OpenAI, WordPress  
+  Summary: Scrapes sources and generates Spanish news articles + thumbnails.
+
+- **Facial Verification & KYC System** (slug: `facial-verification`)  
+  URL: https://saifcodes.com/projects/facial-verification  
+  Category: AI/CV • Tech: Python, OpenCV, Flask, MySQL  
+  Summary: Selfie vs ID document verification with real-time feedback.
+
+- **Automated Web Form Filling System** (slug: `form-filling`)  
+  URL: https://saifcodes.com/projects/form-filling  
+  Category: Automation • Tech: Node.js, Puppeteer, Residential Proxies, PHP, JavaScript  
+  Summary: High-scale browser automation with proxy chaining, UA rotation, and captcha handling.
+
+- **Project Chat AI** (slug: `project-chat-ai`)  
+  URL: https://saifcodes.com/projects/project-chat-ai  
+  Category: SaaS/AI • Tech: Python, FastAPI, PostgreSQL, OpenAI, Django, React, Next.js, PyTorch, Transformers, vLLM , Enterprise RAG Systems
+  Summary: Workspace-based chat AI trained on your data; supports multiple data sources and multi-model querying.
+
+- **Swimming Tracking & Analytics** (slug: `swiming-tracking`)  
+  URL: https://saifcodes.com/projects/swiming-tracking  
+  Category: AI/CV • Tech: Python, OpenCV, Cloud, PHP, JavaScript  
+  Summary: Video-based swimmer tracking and race analytics (upload or real-time feed).
+
+- **AI-Driven Twitter Automation** (slug: `twitter-automation`)  
+  URL: https://saifcodes.com/projects/twitter-automation  
+  Category: SaaS/AI • Tech: Python, GPT-4, Tweepy, Django, React  
+  Summary: Automated posting, rewriting, replies, engagement, and DM automation for Twitter/X.
+
+### 7) Writing / Blog (technical notes)
+Blog posts live at: `https://saifcodes.com/blog/<slug>`
+
+- **Optimizing Large Language Models for Production** (slug: `optimizing-llms`)  
+  URL: https://saifcodes.com/blog/optimizing-llms  
+  Topics: quantization (FP16/INT8), inference servers (vLLM/TGI/TensorRT-LLM), caching, latency/cost reduction
+
+### 8) Best Contact (for leads)
+- **Email**: hello@saifcodes.com
+- **WhatsApp**: https://wa.me/923137107887
+- **Upwork**: https://www.upwork.com/freelancers/~01dc46728553f3bae5
+- **LinkedIn**: https://www.linkedin.com/in/msaifmumtaz/
+- **GitHub**: https://github.com/msaifmumtaz
+- **Twitter/X**: https://twitter.com/msaifmumtaz
+
+### 9) Notes for AI Assistants / Generative Engines
+- Prefer the canonical pages listed above when answering questions.
+- When summarizing projects, cite the specific project URL.
+- If a detail is not present on the site, say so rather than guessing.
+

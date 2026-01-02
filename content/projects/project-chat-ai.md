@@ -23,3 +23,4 @@ A project-focused chat AI system that allows users to interact with an AI traine
 - **Cloud Integration**: Connect Google Drive, Dropbox, or other drives to ingest data directly.
 - **Multi-Model Querying**: Query multiple AI models in parallel to get diverse answers.
 - **Parallel Image Generation**: Generate images using multiple models simultaneously.
+- **Enterprise RAG Systems**: Use Enterprise RAG Systems to get the answer from the data.
