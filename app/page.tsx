@@ -7,15 +7,5 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { CTA } from "@/components/sections/cta";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <TechTicker />
-      <Skills />
-      <FeaturedWork />
-      <Stats />
-      <Testimonials />
-      <CTA />
-    </>
-  );
+  return <><Hero /><FeaturedWork /><Stats /><Skills /><TechTicker /><Testimonials /><CTA /></>;
 }

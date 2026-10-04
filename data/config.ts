@@ -5,7 +5,7 @@ export const siteConfig = {
     "Muhammad Saif (SaifCodes) is a Full-Stack Developer and AI Consultant with 8+ years of experience in AI solutions, web applications, and server management.",
   seo_keywords: [
     "Full Stack Developer",
-    "AI Consultant",
+    "AI Engineer",
     "Server Management",
     "Machine Learning",
     "Generative AI",
@@ -56,13 +56,14 @@ export const navigation = {
 
 export const homePageContent = {
   hero: {
-    tagline: "Full-Stack Developer | AI Consultant | Server Expert",
-    headline: "Building <span class='text-primary-indigo'>Intelligent Solutions</span> & Robust Infrastructure.",
+    tagline: "AI Engineer & Full-Stack Developer",
+    headline: "I build production <span class='text-primary-indigo'>AI applications, RAG systems,</span> and scalable SaaS platforms.",
     subtext:
-      "With over 8 years of experience, I specialize in designing, developing, and deploying cutting-edge AI solutions, web applications, and secure server infrastructures.",
-    cta: ["View Projects", "Contact Me"],
+      "I design and develop AI-powered products, from backend architecture and retrieval systems to modern web applications, APIs, and secure cloud deployment.",
+    cta: ["View Case Studies", "Discuss Your Project"],
   },
-  tech_ticker: ["Python", "TensorFlow", "PyTorch", "GPT-4", "Next.js", "React", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Linux", "C/C++", "C#"],
+  tech_ticker:[""],
+  // tech_ticker: ["Python", "TensorFlow", "PyTorch", "GPT-4", "Next.js", "React", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Linux", "C/C++", "C#"],
   stats: [
     { label: "Years Experience", value: "8+" },
     { label: "Jobs Completed", value: "67+" },
@@ -168,14 +169,14 @@ export const aboutPageContent = {
   intro: {
     title: "About Muhammad Saif",
     large_text:
-      "I am a passionate Full-Stack Developer and AI Consultant with a strong background in Server Management. My goal is to translate complex business problems into innovative, efficient technical solutions.",
+      "I'm Muhammad Saif, an AI and full-stack engineer focused on building production SaaS applications, RAG systems, and reliable backend infrastructure. My work spans software engineering, AI integration, and deployment, allowing me to take products from architecture through production.",
   },
   experience: [
     {
-      role: "Freelance Full-Stack Developer & AI Consultant",
+      role: "Freelance Full-Stack Developer & AI Engineer",
       company: "Upwork (Top Rated)",
       year: "2019 - Present",
-      details: "Successfully completed over 60 jobs focusing on AI, Web Development, and Server Management. Projects include Subscription APIs, Cloud-Based Computer Vision, and AI-Powered Automation.",
+      details: "Successfully completed over 60 jobs focusing on AI, Web Development, and DevOps Management. Projects include Subscription APIs, Cloud-Based Computer Vision, and AI-Powered Automation.",
     },
     {
       role: "IT Manager",
@@ -205,30 +206,30 @@ export const aboutPageContent = {
 
 export const footerContent = {
   columns: [
-    { 
-      title: "Socials", 
+    {
+      title: "Socials",
       links: [
         { label: "Upwork", href: "https://www.upwork.com/freelancers/~01dc46728553f3bae5" },
         { label: "StackOverflow", href: "https://stackoverflow.com/users/msaifmumtaz" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/msaifmumtaz/" },
         { label: "GitHub", href: "https://github.com/msaifmumtaz" }
-      ] 
+      ]
     },
-    { 
-      title: "Quick Links", 
+    {
+      title: "Quick Links",
       links: [
         { label: "About Me", href: "/about" },
         { label: "Contact", href: "/contact" },
         { label: "Projects", href: "/projects" },
         { label: "Schedule a Meeting", href: "https://calendly.com/ch-saif109/30min" }
-      ] 
+      ]
     },
-    { 
-      title: "Legal", 
+    {
+      title: "Legal",
       links: [
         { label: "Privacy Policy", href: "/privacy" },
         { label: "Terms of Service", href: "/terms" }
-      ] 
+      ]
     },
   ],
   bottom_text: " Muhammad Saif. All rights reserved.",

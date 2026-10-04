@@ -21,7 +21,7 @@ export function getSortedProjectsData(): Project[] {
     return [];
   }
 
-  const fileNames = fs.readdirSync(projectsDirectory);
+  const fileNames = fs.readdirSync(projectsDirectory).filter(name => name.endsWith(".md"));
   const allProjectsData = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(projectsDirectory, fileName);
@@ -31,7 +31,7 @@ export function getSortedProjectsData(): Project[] {
     return {
       slug,
       content,
-      ...(data as any),
+      ...(data as Omit<Project, "slug" | "content">),
     } as Project;
   });
 
@@ -46,7 +46,6 @@ export function getProjectData(slug: string): Project {
   return {
     slug,
     content,
-    ...(data as any),
+    ...(data as Omit<Project, "slug" | "content">),
   };
 }
-

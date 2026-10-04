@@ -2,99 +2,45 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { memo, useEffect, useRef, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navigation, siteConfig } from "@/data/config";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Button } from "../ui/button";
+import { buttonClass } from "@/components/ui/button";
 
-export function Navbar() {
+export const Navbar = memo(function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    if (!open) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { setOpen(false); toggle.current?.focus(); }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [open]);
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-bg-core/80 backdrop-blur-md border-b border-border-subtle py-4" : "bg-transparent py-6"
-      )}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold font-heading text-text-main tracking-tighter hover:text-primary-indigo-dim transition-colors">
-          @{siteConfig.site_name.split(" - ")[0]}
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navigation.links.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className="relative text-sm font-medium text-text-muted hover:text-text-main transition-colors"
-            >
-              {link.label}
-              {pathname === link.path && (
-                <motion.span
-                  layoutId="underline"
-                  className="absolute left-0 top-full block h-px w-full bg-primary-indigo mt-1"
-                />
-              )}
-            </Link>
-          ))}
-          <ModeToggle />
-          <Button variant="primary" size="default"><Link href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer">Schedule a Meeting</Link></Button>
+    <header className="sticky top-0 border-b border-border-subtle bg-bg-core" style={{ zIndex: "var(--layer-nav)" }}>
+      <div className="site-shell flex h-[72px] items-center justify-between gap-5">
+        <Link prefetch={false} href="/" className="text-xl font-bold font-logo text-text-main tracking-tighter hover:text-accent transition-colors">@{siteConfig.site_name.split(" - ")[0]}</Link>
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-6 lg:gap-9">
+          {navigation.links.map(link => <Link prefetch={false} key={link.path} href={link.path} aria-current={pathname === link.path ? "page" : undefined} className={cn("relative py-2 text-sm font-medium transition-colors hover:text-text-main", pathname === link.path ? "text-text-main" : "text-text-muted")}>
+            {link.label}
+            {pathname === link.path && <span className="navigation-underline absolute bottom-0 left-0 h-[2px] w-full bg-accent" />}
+          </Link>)}
         </nav>
-
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
           <ModeToggle />
-          <button
-            className="text-text-main"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
+          <a href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "hidden lg:inline-flex")}>Schedule a Meeting <ArrowUpRight size={16} strokeWidth={2} /></a>
+          <button ref={toggle} type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" className="button button-ghost button-icon md:hidden" onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-bg-core border-b border-border-subtle"
-        >
-          <nav className="flex flex-col p-4 gap-4">
-            {navigation.links.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={cn(
-                  "text-lg font-medium transition-colors",
-                  pathname === link.path ? "text-primary-indigo" : "text-text-muted hover:text-text-main"
-                )}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button variant="primary" size="default"><Link href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer">Schedule a Meeting</Link></Button>
-          </nav>
-        </motion.div>
-      )}
+        {open && <nav id="mobile-navigation" aria-label="Mobile navigation" className="mobile-navigation absolute top-full left-0 right-0 border-b border-border-subtle bg-bg-core p-6 md:hidden" style={{ zIndex: "var(--layer-menu)" }}>
+          <div className="flex flex-col gap-2">{navigation.links.map(link => <Link key={link.path} href={link.path} aria-current={pathname === link.path ? "page" : undefined} className="py-3 text-lg" onClick={() => setOpen(false)}>{link.label}</Link>)}
+          <a href="https://calendly.com/ch-saif109/30min" target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "mt-3")}>Schedule a Meeting <ArrowUpRight size={16} /></a></div>
+        </nav>}
     </header>
   );
-}
-
+});

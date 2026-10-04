@@ -1,22 +1,3 @@
 export default function Loading() {
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="h-16 w-3/4 bg-bg-surface-2 animate-pulse rounded-lg mb-6"></div>
-      <div className="h-6 w-1/2 bg-bg-surface-2 animate-pulse rounded mb-12"></div>
-      
-      <div className="flex gap-4 mb-12">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="h-10 w-24 bg-bg-surface-2 animate-pulse rounded-full"></div>
-        ))}
-      </div>
-
-      <div className="space-y-6">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="h-48 bg-bg-surface-2 animate-pulse rounded-xl"></div>
-        ))}
-      </div>
-    </div>
-  );
+  return <div className="site-shell document-body" role="status" aria-label="Loading articles"><div className="page-intro"><div className="skeleton h-20 w-2/3 mb-6" /><div className="skeleton h-6 w-1/2" /></div><div className="flex gap-2 mb-10">{Array.from({ length: 5 }, (_, index) => <div key={index} className="skeleton h-11 w-24" />)}</div><div className="skeleton h-60 w-full" /></div>;
 }
-
-

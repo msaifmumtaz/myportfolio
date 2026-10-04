@@ -1,79 +1,23 @@
 import { getSortedProjectsData } from "@/lib/projects";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { projectImage, projectSummary } from "@/lib/project-presentation";
+import { Reveal } from "@/components/ui/reveal";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export function FeaturedWork() {
-  const projects = getSortedProjectsData();
-  const featuredProjects = projects.filter(p => p.show_home).slice(0, 3);
-
-  return (
-    <section className="py-24 container mx-auto px-4">
-      <div className="flex justify-between items-end mb-12">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Selected Work</h2>
-          <p className="text-text-muted">A glimpse into my recent engineering endeavors.</p>
-        </div>
-        <Link href="/projects">
-          <Button variant="secondary" className="hidden md:flex gap-2">
-            View All Projects <ArrowRight size={16} />
-          </Button>
+  const projects = getSortedProjectsData().filter(project => project.show_home).slice(0, 3);
+  return <section className="site-shell section-space border-t border-border-subtle">
+    <div className="mb-10"><h2 className="section-heading">Selected Work</h2><p className="section-intro">A glimpse into my recent engineering endeavors.</p></div>
+    <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-9">
+      {projects.map((project, index) => <Reveal key={project.slug} className={index === 0 ? "md:row-span-2" : undefined} delay={index * .06}>
+        <Link prefetch={false} href={`/projects/${project.slug}`} className="project-link group block">
+          <div className={`media-frame relative ${index === 0 ? "aspect-[4/3]" : "aspect-[2.1/1]"}`}>{projectImage(project) && <Image src={projectImage(project)!} alt={project.title} fill sizes={index === 0 ? "(min-width: 768px) 700px, 100vw" : "(min-width: 768px) 500px, 100vw"} className="project-image object-contain p-3 md:p-5" />}</div>
+          <div className="mt-5 flex items-start justify-between gap-5"><div><p className="text-xs font-mono text-accent mb-2">{project.category}</p><h3 className={index === 0 ? "text-2xl md:text-[32px] leading-tight font-medium tracking-[-.04em]" : "text-xl md:text-2xl leading-tight font-medium tracking-[-.035em]"}>{project.title}</h3></div><ArrowUpRight className="mt-1 shrink-0 text-accent" size={22} /></div>
+          <p className="text-sm leading-relaxed text-text-muted mt-3 max-w-xl">{projectSummary(project)}</p>
+          <div className="flex flex-wrap gap-2 mt-4">{project.tech.slice(0, 3).map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
         </Link>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {featuredProjects.map((project, index) => (
-          <Link key={project.slug} href={`/projects/${project.slug}`}>
-            <Card className="group cursor-pointer h-full flex flex-col">
-              <div className="aspect-video bg-bg-surface-2 rounded-md mb-6 overflow-hidden relative">
-                {project.image_path ? (
-                  <img 
-                    src={project.image_path} 
-                    alt={project.title} 
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-br from-bg-surface-2 to-bg-core group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center text-text-muted opacity-20 text-4xl font-bold">
-                      {project.title[0]}
-                    </div>
-                  </>
-                )}
-              </div>
-              
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-secondary-rose text-sm font-mono">{project.category}</span>
-              </div>
-              
-              <h3 className="text-xl font-bold mb-3 group-hover:text-primary-indigo transition-colors">
-                {project.title}
-              </h3>
-              
-              <p className="text-text-muted text-sm mb-4 line-clamp-2">
-                {project.content}
-              </p>
-              
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tech.slice(0, 3).map((t) => (
-                  <span key={t} className="text-xs bg-bg-surface-2 px-2 py-1 rounded text-text-muted border border-border-subtle">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </Card>
-          </Link>
-        ))}
-      </div>
-      
-      <div className="mt-8 text-center md:hidden">
-         <Link href="/projects">
-          <Button variant="secondary" className="gap-2">
-            View All Projects <ArrowRight size={16} />
-          </Button>
-        </Link>
-      </div>
-    </section>
-  );
+      </Reveal>)}
+    </div>
+  </section>;
 }

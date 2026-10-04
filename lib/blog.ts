@@ -20,7 +20,7 @@ export function getSortedPostsData(): BlogPost[] {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory).filter(name => name.endsWith(".md"));
   const allPostsData = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDirectory, fileName);
@@ -30,7 +30,7 @@ export function getSortedPostsData(): BlogPost[] {
     return {
       slug,
       content,
-      ...(data as any),
+      ...(data as Omit<BlogPost, "slug" | "content">),
     } as BlogPost;
   });
 
@@ -51,9 +51,8 @@ export function getPostData(slug: string): BlogPost {
   return {
     slug,
     content,
-    ...(data as any),
+    ...(data as Omit<BlogPost, "slug" | "content">),
   };
 }
-
 
 

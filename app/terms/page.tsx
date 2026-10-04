@@ -1,22 +1,19 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 export default function TermsAndConditions() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-8">
-        <Link href="/">
-          <Button variant="ghost" className="pl-0 hover:pl-2 transition-all">
+        <Link href="/" className="text-link text-sm">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
-          </Button>
         </Link>
       </div>
 
       <div className="prose max-w-none prose-headings:text-text-main prose-p:text-text-main prose-strong:text-text-main prose-li:text-text-main prose-a:text-primary-indigo hover:prose-a:text-primary-indigo-dim">
         <h1 className="text-4xl font-bold font-heading mb-8">Terms and Conditions</h1>
-        <p className="text-text-muted mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+        <p className="text-text-muted mb-8">Last updated: {"1/2/2026"}</p>
 
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">1. Agreement to Terms</h2>

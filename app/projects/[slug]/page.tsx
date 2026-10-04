@@ -1,80 +1,28 @@
-import { getProjectData, getSortedProjectsData } from "@/lib/projects";
+import { getSortedProjectsData } from "@/lib/projects";
+import { projectImage } from "@/lib/project-presentation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
+import { buttonClass } from "@/components/ui/button";
 
-export async function generateStaticParams() {
-  const projects = getSortedProjectsData();
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
+export function generateStaticParams() { return getSortedProjectsData().map(project => ({ slug: project.slug })); }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  
-  try {
-    const project = getProjectData(resolvedParams.slug);
-
-    return (
-      <article className="container mx-auto px-4 py-12 max-w-4xl">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-text-muted hover:text-primary-indigo mb-8 transition-colors"
-        >
-          <ArrowLeft size={16} /> Back to Projects
-        </Link>
-
-        <header className="mb-12">
-          <div className="flex items-center gap-4 mb-6 text-sm">
-            <span className="text-secondary-rose font-mono px-2 py-1 bg-bg-surface-2 rounded border border-border-subtle">
-              {project.category}
-            </span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
-            {project.title}
-          </h1>
-          
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.tech.map((t) => (
-              <span key={t} className="text-sm bg-bg-surface-2 px-3 py-1.5 rounded text-text-muted border border-border-subtle">
-                {t}
-              </span>
-            ))}
-          </div>
-
-          {project.demo_url && (
-            <div className="mb-8">
-              <a 
-                href={project.demo_url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary-indigo text-white px-4 py-2 rounded-md font-medium hover:bg-primary-indigo-dim transition-colors"
-              >
-                View Live Demo
-              </a>
-            </div>
-          )}
-
-          {project.image_path && (
-            <div className="mb-12 rounded-lg overflow-hidden border border-border-subtle">
-              <img 
-                src={project.image_path} 
-                alt={project.title} 
-                className="w-full h-auto"
-              />
-            </div>
-          )}
-        </header>
-
-        <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-pre:border prose-pre:border-border-subtle">
-          <MDXRemote source={project.content} />
-        </div>
-      </article>
-    );
-  } catch (error) {
-    notFound();
-  }
+  const { slug } = await params;
+  const project = getSortedProjectsData().find(project => project.slug === slug);
+  if (!project) notFound();
+  const image = projectImage(project);
+  return <article className="site-shell document-body">
+    <header className="page-intro">
+      <Link href="/projects" className="text-link text-sm mb-12"><ArrowLeft size={16} />Back to Projects</Link>
+      <p className="font-mono text-sm text-accent mb-4">{project.category}</p>
+      <h1 className="page-heading max-w-5xl">{project.title}</h1>
+      <div className="flex flex-wrap gap-2 mt-7">{project.tech.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
+      {project.demo_url && <a href={project.demo_url} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "mt-8")}>View Live Demo<ArrowUpRight size={17} /></a>}
+    </header>
+    {image && <figure className="mb-16"><div className="media-frame relative aspect-[16/9]"><Image src={image} alt={project.image_path ? project.title : "Illustrative concept for Facial Verification & KYC System"} fill sizes="(min-width: 1280px) 1248px, 100vw" className={project.image_path ? "object-contain p-4 md:p-10" : "object-cover"} priority /></div>{!project.image_path && <figcaption className="text-xs text-text-muted mt-3">Illustrative concept for facial verification.</figcaption>}</figure>}
+    <div className="prose prose-lg max-w-[78ch] mx-auto"><MDXRemote source={project.content} /></div>
+  </article>;
 }
-

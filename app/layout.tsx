@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/config";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -9,16 +9,18 @@ import { Footer } from "@/components/layout/footer";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
+  preload: false,
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -38,16 +40,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased bg-bg-core text-text-main font-body selection:bg-primary-indigo selection:text-white transition-colors duration-300`}
+        className={`${spaceGrotesk.variable} ${geist.variable} ${geistMono.variable} antialiased bg-bg-core text-text-main font-body min-h-[100dvh]`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="min-h-screen pt-24 pb-16">
+          <main className="min-h-[70dvh]">
             {children}
           </main>
           <Footer />
