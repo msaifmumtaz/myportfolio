@@ -196,11 +196,12 @@ export const aboutPageContent = {
     { degree: "F.Sc Pre-Engineering", school: "Govt Degree College Mian Channu", year: "" },
   ],
   tech_stack: {
-    frontend: ["Vue.js", "React", "Next.js", "HTML5", "CSS3", "Tailwind", "JSON"],
+    frontend: ["React", "Next.js", "Remix JS", "TanStack", "HTML/CSS/JS", "Tailwind", "JSON"],
     backend: ["Python", "PHP", "Node.js", "C/C++", "C#", "Java", "Go"],
-    ai_ml: ["TensorFlow", "PyTorch", "Scikit-Learn", "GPT-4", "OpenCV", "NLP", "LLMs"],
+    ai_ml: ["TensorFlow", "PyTorch", "Scikit-Learn", "OpenCV", "NLP", "LLMs"],
+    ai_agents: ["LangGraph", "LangChain", "PydanticAI","LlamaIndex","Agents SDK (OpenAI)"],
     devops: ["AWS", "Azure", "GCP", "Digital Ocean", "Docker", "Kubernetes", "Linux", "Windows Server"],
-    databases: ["MySQL", "PostgreSQL", "Oracle", "MSSQL", "SQLite", "MongoDB", "Redis"],
+    databases: ["MySQL", "PostgreSQL", "Oracle", "MSSQL", "SQLite", "MongoDB", "Redis"]
   },
 };
 
