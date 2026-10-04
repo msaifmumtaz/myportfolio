@@ -8,16 +8,19 @@ image_path: "/projects/ai-news-autmation.png"
 show_home: True
 ---
 
-A news automation system that uses AI to generate news articles and thumbnails. It scrapes the news from the provided sources and generates the news articles and thumbnails in spanish.
+A Spanish-language news site that mostly runs itself. The system gathers stories from trusted sources, writes original articles with AI and creates a thumbnail for each one, then publishes it all to WordPress.
 
-### Technology Used
-- **Python**: Core programming language.
-- **FastAPI**: High-performance web framework for APIs.
-- **PostgreSQL**: Robust database for data storage.
-- **OpenAI**: State-of-the-art language models.
-- **Wordpress**: Content management system.
+### The challenge
+Running a news site means publishing all the time. My client wanted to keep up with the news cycle without paying for a full editorial team.
 
-### Key Features
-- **News Scraping**: Scrape the news from the provided sources.
-- **News Generation**: Generate the news articles and thumbnails in spanish.
-- **News Thumbnails**: Generate the thumbnails for the news articles.
+### What I built
+- **Source scraping:** collects new stories from a hand-picked list of sources.
+- **AI writing:** turns each story into a fresh, readable article in Spanish.
+- **Thumbnails:** generates a matching image for every post.
+- **Auto-publishing:** sends finished articles directly to WordPress.
+
+### Tech behind it
+- **Python + FastAPI** for the pipeline and API.
+- **PostgreSQL** to track sources and articles.
+- **OpenAI** models for writing and images.
+- **WordPress** as the public site.

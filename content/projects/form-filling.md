@@ -8,24 +8,20 @@ image_path: "/projects/webautoma.png"
 show_home: true
 ---
 
-Client Wants to Automate From Filling using Browser Automation which can fill millions of forms in any website without user interaction.
-Following Features Was Required.
+My client needed to submit huge numbers of web forms, across many different websites, without anyone sitting at a keyboard. So I built a browser automation platform that does the work on its own and is managed from a simple dashboard.
 
-1. Dashboard for Managing Automation Project
-2. Proxy Chaining For Form Filling Based on Location Of Website
-3. User Agent Changing/Handling so Websites Can not track that all leads coming from Bot or Automation Tool
-4. Recaptcha Handling / Improve Browser working to look like human.
-5. Users Management Dashboard
+### The challenge
+Filling a form once is easy. Filling it at scale is not. Websites spot repeated traffic quickly, captchas get in the way, and every site has a different layout. The system had to look like a real person on every visit and be easy for a non-developer to run.
 
-### Technology Used
-- **Node.js**: Backend runtime for automation scripts.
-- **Puppeteer**: Browser automation library.
-- **Residential Proxy**: To simulate genuine user traffic and avoid IP blocks.
-- **Admin Dashboard**: Built with PHP, HTML, CSS, and JavaScript for management.
+### What I built
+- **Field mapping:** set up a form's fields and buttons once, then reuse that setup as often as you like.
+- **Bulk uploads:** drop in a CSV and the system works through every row by itself.
+- **Location-aware proxies:** traffic is sent through residential proxies that match each website's region.
+- **Human-like browsing:** rotating user agents and natural interaction patterns so submissions don't look automated.
+- **Captcha handling:** captchas are detected and solved automatically.
+- **Admin dashboard:** one place to manage proxies, form lists, CSV data, users and results.
 
-### Key Features
-- **Field Mapping**: Pre-configure required fields and button clicks once for repeated use.
-- **Bulk Processing**: Upload large numbers of data entries via CSV to process automatically.
-- **Human Behavior Mimicry**: 100% accurate simulation of human interactions to bypass bot detection.
-- **Captcha Solving**: Auto-detection and solving of captchas.
-- **Management Dashboard**: Admin interface to manage proxies, form lists, CSV data, and view results.
+### Tech behind it
+- **Node.js + Puppeteer** run the browser automation.
+- **Residential proxies** provide real-world IPs.
+- **PHP, HTML, CSS & JavaScript** power the admin dashboard.

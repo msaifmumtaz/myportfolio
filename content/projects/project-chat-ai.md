@@ -8,19 +8,21 @@ image_path: "/projects/projectchat.png"
 show_home: true
 ---
 
-A project-focused chat AI system that allows users to interact with an AI trained specifically on their own data and context. It supports multiple data sources and advanced model querying.
+An AI assistant that actually knows your project. Upload your documents or connect Google Drive or Dropbox, and ask questions in plain English. It answers from your own data, not guesses.
 
-### Technology Used
-- **Python**: Core programming language.
-- **FastAPI**: High-performance web framework for APIs.
-- **PostgreSQL**: Robust database for data storage.
-- **GPT-4 / Custom Fine-Tuned Models**: State-of-the-art language models.
-- **Admin Dashboard**: Interface for managing workspaces and data.
+### The challenge
+General chatbots are great at general questions, but they know nothing about *your* work. Teams kept copying and pasting documents into prompts. They needed an assistant that already had the context and kept every project separate.
 
-### Key Features
-- **Context-Aware Chat**: Chat with AI that understands your specific project data.
-- **Workspace Management**: Create projects/workspaces and upload documents for context.
-- **Cloud Integration**: Connect Google Drive, Dropbox, or other drives to ingest data directly.
-- **Multi-Model Querying**: Query multiple AI models in parallel to get diverse answers.
-- **Parallel Image Generation**: Generate images using multiple models simultaneously.
-- **Enterprise RAG Systems**: Use Enterprise RAG Systems to get the answer from the data.
+### What I built
+- **Workspaces:** create a workspace for each project and upload the documents it should learn from.
+- **Cloud drive sync:** connect Google Drive, Dropbox and other drives so data comes in automatically.
+- **Answers grounded in your data:** an enterprise-grade RAG pipeline finds the right passages before the AI responds.
+- **Compare models side by side:** send one question to several AI models at once and pick the best answer.
+- **Parallel image generation:** create images with multiple models at the same time.
+- **Admin dashboard:** manage workspaces, users and data in one place.
+
+### Tech behind it
+- **Python, FastAPI & Django** on the backend.
+- **React & Next.js** for the interface.
+- **PostgreSQL** for app data.
+- **GPT-4 and custom fine-tuned models**, served with **PyTorch, Transformers & vLLM**.

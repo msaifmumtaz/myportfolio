@@ -8,19 +8,20 @@ image_path: "/projects/twitter-automation.png"
 show_home: true
 ---
 
-A comprehensive platform for automating Twitter/X interactions using AI. This tool enhances engagement by automating posts, replies, and account management tasks while maintaining a natural, engaging tone.
+A tool that runs a Twitter/X account almost by itself: it schedules posts, rewrites trending content in your voice, replies to mentions and DMs, and grows your audience, without sounding like a bot.
 
-### Technology Used
-- **Python**: Backend logic.
-- **GPT-4**: AI model for generating and rewriting content.
-- **Twitter API & Tweepy**: Integration with the Twitter platform.
-- **Django**: Backend framework for the dashboard.
-- **HTML/CSS/JS**: Frontend interface.
+### The challenge
+Growing on Twitter/X means posting and replying all day, every day. My client wanted to keep the account active and engaging without spending hours on it, and without the stiff, robotic tone most automation tools produce.
 
-### Key Features
-- **Auto-Posting**: Automate tweet posting schedules.
-- **Content Scraper & Rewriter**: Scrape popular tweets and rewrite them using AI to be more engaging.
-- **Auto-Reply**: Intelligent automatic replies to relevant tweets.
-- **Smart Engagement**: Auto-follow/unfollow and like/unlike features to grow audience.
-- **DM Automation**: Automatically reply to Direct Messages.
-- **Scheduling**: Advanced scheduling tools for content planning.
+### What I built
+- **Scheduled posting:** plan content ahead and let it go out on time.
+- **Find & rewrite:** pick up popular tweets in your niche and rewrite them with AI into something fresh and on-brand.
+- **Smart replies:** respond automatically to relevant tweets and mentions.
+- **DM replies:** answer direct messages automatically.
+- **Audience growth:** automated follow/unfollow and like/unlike to reach the right people.
+
+### Tech behind it
+- **Python & Django** for the backend and dashboard.
+- **GPT-4** for writing and rewriting content.
+- **Twitter API + Tweepy** to connect to the platform.
+- **React, HTML, CSS & JavaScript** for the interface.

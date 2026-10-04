@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
-type FormData = { name: string; company: string; email: string; budget: string; details: string };
+type FormData = { name: string; company: string; email: string; details: string };
 type ValidationIssue = { path?: (string | number)[]; message: string };
-const empty: FormData = { name: "", company: "", email: "", budget: "", details: "" };
+const empty: FormData = { name: "", company: "", email: "", details: "" };
 
 export function ContactForm() {
   const [formData, setFormData] = useState<FormData>(empty);
@@ -47,9 +47,8 @@ export function ContactForm() {
   return <form ref={form} onSubmit={handleSubmit} aria-label="Project inquiry" aria-busy={loading} className="min-w-0 rounded-2xl bg-bg-surface-1 p-6 md:p-9 space-y-6">
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6"><div><label htmlFor="contact-name" className="block text-sm font-medium mb-2">Name</label><input {...attributes("name")} type="text" required autoComplete="name" placeholder="Your name" />{fieldError("name")}</div><div><label htmlFor="contact-company" className="block text-sm font-medium mb-2">Company</label><input {...attributes("company")} type="text" autoComplete="organization" placeholder="Your organization" />{fieldError("company")}</div></div>
     <div><label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email</label><input {...attributes("email")} type="email" required autoComplete="email" placeholder="you@company.com" />{fieldError("email")}</div>
-    <div><label htmlFor="contact-budget" className="block text-sm font-medium mb-2">Budget Range</label><select {...attributes("budget")}><option value="">Select a range</option><option value="$5k - $10k">$5k - $10k</option><option value="$10k - $25k">$10k - $25k</option><option value="$25k+">$25k+</option></select>{fieldError("budget")}</div>
-    <div><label htmlFor="contact-details" className="block text-sm font-medium mb-2">Project Details</label><textarea {...attributes("details")} required rows={5} placeholder="Tell me about your project..." />{fieldError("details")}</div>
-    {error && <div role="alert" className="form-notice">{error}</div>}{success && <div role="status" className="form-notice">Message sent successfully! I&apos;ll get back to you soon.</div>}
+    <div><label htmlFor="contact-details" className="block text-sm font-medium mb-2">Project Details</label><textarea {...attributes("details")} required rows={5} placeholder="What are you building, and what do you need help with?" />{fieldError("details")}</div>
+    {error && <div role="alert" className="form-notice">{error}</div>}{success && <div role="status" className="form-notice">Thanks, your message is in! I&apos;ll get back to you soon.</div>}
     <Button type="submit" disabled={loading} className="w-full">{loading ? "Sending..." : "Send Message"}<ArrowUpRight size={17} aria-hidden="true" /></Button>
   </form>;
 }

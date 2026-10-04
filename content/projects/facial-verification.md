@@ -8,15 +8,18 @@ image_path: ""
 show_home: false
 ---
 
-A facial recognition system designed for KYC (Know Your Customer) verification. The system captures user selfies and compares them with their provided identification documents (CNIC, Passport, etc.) to verify identity in real-time.
+Identity checks without the paperwork. A user takes a selfie, uploads their CNIC or passport, and the system tells them right away whether the two faces match.
 
-### Technology Used
-- **Python**: Core logic and processing.
-- **OpenCV**: Computer vision tasks for face detection and matching.
-- **Flask**: Backend API handling requests.
-- **MySQL**: Database for user data and verification logs.
+### The challenge
+Checking IDs by hand is slow, and it gets harder as more people sign up. My client needed a KYC (Know Your Customer) step that could verify people automatically and still give them clear feedback in the moment.
 
-### Key Features
-- **Document Verification**: Users can upload documents (CNIC, Passport) which are analyzed against their live selfie.
-- **Real-time Verification**: Instant feedback on identity verification status.
-- **Face Comparison**: Advanced algorithms to match live faces with static document photos.
+### What I built
+- **Document upload:** users submit a CNIC, passport or other ID.
+- **Live selfie check:** a live photo is captured and compared against the face on the document.
+- **Face matching:** computer vision lines up a live face with a printed or scanned photo, even though the two look quite different.
+- **Instant feedback:** users see their verification result right away instead of waiting for a manual review.
+
+### Tech behind it
+- **Python + OpenCV** for face detection and matching.
+- **Flask** for the API.
+- **MySQL** to store user records and verification logs.

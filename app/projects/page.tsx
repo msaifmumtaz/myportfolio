@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function ProjectsPage() {
   const projects = getSortedProjectsData();
   return <div className="site-shell document-body">
-    <header className="page-intro"><h1 className="page-heading">Case Studies</h1><p className="section-intro">A collection of projects demonstrating my expertise in Full Stack Development and AI Engineering.</p></header>
+    <header className="page-intro"><h1 className="page-heading">Case Studies</h1><p className="section-intro">Real projects for real clients, covering AI products, automation and computer vision. Here&apos;s what each one does and how I built it.</p></header>
     {projects.length ? <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
       {projects.map((project, index) => <Reveal key={project.slug} delay={(index % 2) * .08}>
         <Link href={`/projects/${project.slug}`} className="project-link group block">
@@ -20,6 +20,6 @@ export default function ProjectsPage() {
         </Link>
       </Reveal>)}
     </div> : <p className="form-notice">Case studies will appear here when projects are added.</p>}
-    <p className="text-text-muted max-w-2xl mt-20 text-base leading-relaxed">The projects shown here are just a small selection of my work. I have completed many more projects across different technologies and industries.</p>
+    <p className="text-text-muted max-w-2xl mt-20 text-base leading-relaxed">This is only a small part of what I&apos;ve worked on. Many projects are under NDA, so if you don&apos;t see something like your idea here, just ask. Chances are I&apos;ve built something close.</p>
   </div>;
 }

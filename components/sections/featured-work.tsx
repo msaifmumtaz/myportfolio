@@ -8,7 +8,7 @@ import Link from "next/link";
 export function FeaturedWork() {
   const projects = getSortedProjectsData().filter(project => project.show_home).slice(0, 3);
   return <section className="site-shell section-space border-t border-border-subtle">
-    <div className="mb-10"><h2 className="section-heading">Selected Work</h2><p className="section-intro">A glimpse into my recent engineering endeavors.</p></div>
+    <div className="mb-10"><h2 className="section-heading">Selected Work</h2><p className="section-intro">A few things I&apos;ve built recently, and the problems they solved.</p></div>
     <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-9">
       {projects.map((project, index) => <Reveal key={project.slug} className={index === 0 ? "md:row-span-2" : undefined} delay={index * .06}>
         <Link prefetch={false} href={`/projects/${project.slug}`} className="project-link group block">

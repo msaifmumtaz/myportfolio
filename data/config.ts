@@ -1,8 +1,8 @@
 export const siteConfig = {
-  site_name: "SaifCodes - Full-Stack Developer & AI Consultant",
+  site_name: "SaifCodes - Full-Stack Developer & AI Engineer",
   base_url: "saifcodes.com",
   meta_description:
-    "Muhammad Saif (SaifCodes) is a Full-Stack Developer and AI Consultant with 8+ years of experience in AI solutions, web applications, and server management.",
+    "I'm Muhammad Saif, a full-stack developer and AI engineer. For 8+ years I've been building AI products, Full-stack SaaS and the servers they run on, for clients around the world.",
   seo_keywords: [
     "Full Stack Developer",
     "AI Engineer",
@@ -56,26 +56,26 @@ export const navigation = {
 
 export const homePageContent = {
   hero: {
-    tagline: "AI Engineer & Full-Stack Developer",
-    headline: "I build production <span class='text-primary-indigo'>AI applications, RAG systems,</span> and scalable SaaS platforms.",
+    tagline: "Hi, I'm Saif. AI engineer & full-stack developer",
+    headline: "I build <span class='text-primary-indigo'>AI products & SaaS</span> that actually ship from the first prototype to the server it runs on.",
     subtext:
-      "I design and develop AI-powered products, from backend architecture and retrieval systems to modern web applications, APIs, and secure cloud deployment.",
-    cta: ["View Case Studies", "Discuss Your Project"],
+      "Chatbots that know your data, automations that save your team hours, and SaaS platforms built to grow. I handle the whole thing: backend, frontend, AI and deployment, so you only need one person.",
+    cta: ["See my work", "Tell me about your project"],
   },
   tech_ticker:[""],
   // tech_ticker: ["Python", "TensorFlow", "PyTorch", "GPT-4", "Next.js", "React", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Linux", "C/C++", "C#"],
   stats: [
-    { label: "Years Experience", value: "8+" },
-    { label: "Jobs Completed", value: "67+" },
-    { label: "AI Models Deployed", value: "20+" },
+    { label: "Years building software", value: "8+" },
+    { label: "Projects delivered on Upwork", value: "67+" },
+    { label: "AI models in production", value: "20+" },
   ],
   skills: [
     {
       category: "Artificial Intelligence & ML",
       items: [
-        "Generative AI & LLMs ",
+        "Generative AI & LLMs",
         "AI Model Training",
-        "SLM & SAM Models",
+        "Small Language Models & Segment Anything (SAM)",
         "Chatbot Development",
         "Enterprise RAG Systems",
         "TensorFlow, PyTorch, Scikit-Learn",
@@ -92,14 +92,14 @@ export const homePageContent = {
       items: [
         "Python, TypeScript, PHP, C/C++",
         "Vue.js, React, Next.js",
-        "FastApi, Django, Laravel, Node.js",
+        "FastAPI, Django, Laravel, Node.js",
         "RESTful API Development",
         "JWT/SAML SSO, OAuth, OpenID Connect",
-        "Zero Knowledge Auth, E2EE Encrypted Platforms",
+        "Zero-knowledge auth & end-to-end encrypted apps",
         "AI SaaS Development",
         "ERP & CRM Development",
-        "Web Automation, Browser Automation",
-        "Web Scraping, Data Scraping",
+        "Web & browser automation",
+        "Web scraping & data pipelines",
       ],
       icon: "Code"
     },
@@ -167,28 +167,28 @@ export const homePageContent = {
 
 export const aboutPageContent = {
   intro: {
-    title: "About Muhammad Saif",
+    title: "A bit about me",
     large_text:
-      "I'm Muhammad Saif, an AI and full-stack engineer focused on building production SaaS applications, RAG systems, and reliable backend infrastructure. My work spans software engineering, AI integration, and deployment, allowing me to take products from architecture through production.",
+      "I'm Saif, a software engineer from Pakistan who's spent the last 8+ years turning ideas into working products. These days that mostly means AI: RAG systems, chatbots and automations, built on solid backends and servers I set up myself. I like owning a project end to end, because that's how things actually get finished.",
   },
   experience: [
     {
       role: "Freelance Full-Stack Developer & AI Engineer",
       company: "Upwork (Top Rated)",
       year: "2019 - Present",
-      details: "Successfully completed over 60 jobs focusing on AI, Web Development, and DevOps Management. Projects include Subscription APIs, Cloud-Based Computer Vision, and AI-Powered Automation.",
+      details: "67+ projects for clients around the world, with a Top Rated badge to show for it. I've built subscription APIs, cloud computer vision systems and AI automations, and plenty of clients have come back for the next one.",
     },
     {
       role: "IT Manager",
       company: "Unitech Auto Industries Pvt Ltd",
       year: "Nov 2018 - Present",
-      details: "Managing IT infrastructure and operations for a manufacturing organization.",
+      details: "I keep the systems running at a busy manufacturing company: networks, servers, security and the everyday problems that come with them. It taught me to build things that don't break at 2 a.m.",
     },
     {
       role: "AI Developer",
       company: "Various Projects",
       year: "5+ Years",
-      details: "Designed and deployed AI solutions focusing on machine learning, deep learning, and collaborative problem solving.",
+      details: "Alongside client work, I've designed, trained and deployed machine learning and deep learning models, from computer vision to language models, and put them into real products.",
     }
   ],
   education: [
@@ -207,7 +207,7 @@ export const aboutPageContent = {
 export const footerContent = {
   columns: [
     {
-      title: "Socials",
+      title: "Find me on",
       links: [
         { label: "Upwork", href: "https://www.upwork.com/freelancers/~01dc46728553f3bae5" },
         { label: "StackOverflow", href: "https://stackoverflow.com/users/msaifmumtaz" },
@@ -232,5 +232,5 @@ export const footerContent = {
       ]
     },
   ],
-  bottom_text: " Muhammad Saif. All rights reserved.",
+  bottom_text: " Muhammad Saif. Built with care in Lahore ❤️.",
 };

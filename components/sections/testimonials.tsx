@@ -18,7 +18,7 @@ export const Testimonials = memo(function Testimonials() {
     setActive(next);
   };
   return <section className="bg-bg-surface-1 section-space">
-    <div className="site-shell"><h2 className="section-heading">Client Testimonials</h2><p className="section-intro">Feedback from clients I&apos;ve had the pleasure of working with.</p>
+    <div className="site-shell"><h2 className="section-heading">What clients say</h2><p className="section-intro">Don&apos;t just take my word for it. Here&apos;s what people I&apos;ve worked with had to say.</p>
       <Reveal className="mt-12"><div ref={track} tabIndex={0} role="region" className="testimonial-track" aria-label="Client reviews" onScroll={() => {
         if (!track.current) return;
         const first = track.current.children[0] as HTMLElement | undefined;
