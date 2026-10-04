@@ -5,6 +5,7 @@ import { siteConfig } from "@/data/config";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -54,6 +55,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
