@@ -20,6 +20,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact form Turnstile setup
+
+The contact form uses the existing widget with site key `0x4AAAAAAFOI8ZImLLMXMGpm` and action `contact`. `/api/contact` checks the token with Cloudflare Siteverify before sending the existing Resend email. Verification must return `success: true`, action `contact`, and an exact hostname from `TURNSTILE_HOSTNAMES`.
+
+Add the widget's secret directly to the ignored `.env.local` file and your hosting provider's secret environment variables as `TURNSTILE_SECRET`. Keep it server-only; never use a `NEXT_PUBLIC_` prefix for the secret. Set the non-secret `TURNSTILE_HOSTNAMES` for each environment:
+
+```dotenv
+# Local development (.env.local)
+TURNSTILE_HOSTNAMES=localhost,127.0.0.1
+
+# Production (hosting environment)
+TURNSTILE_HOSTNAMES=saifcodes.com,www.saifcodes.com
+```
+
+Use only the production hostnames that serve the form, and confirm those hostnames are allowed on the existing widget in Cloudflare. Real-widget local testing also requires `localhost` / `127.0.0.1` to be allowed there. Production verification refuses an allowlist containing either local hostname. Missing configuration, failed verification, or a Cloudflare outage blocks email sending.
+
+`NEXT_PUBLIC_TURNSTILE_SITE_KEY` can override the public site key for a separate testing environment. The default is the existing widget above. Restart the local server after environment changes and redeploy after hosting configuration changes.
+
+Run `npm test` with Node.js 22.18+ to check the verification policy. After configuring the real secret, submit through the contact form once, then replay that same `/api/contact` request: the first should succeed and the replay should return `403`. Tokens are single-use; the form resets its own widget after every submission attempt. Until that live check passes, real-widget validation is pending. See [Cloudflare's existing-widget flow](https://developers.cloudflare.com/turnstile/spin/prompt.md) and [Siteverify documentation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

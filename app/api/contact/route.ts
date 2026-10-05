@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import { socialLinks } from "@/data/config";
+import { verifyContactTurnstile } from "@/lib/turnstile";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -19,6 +20,13 @@ export async function POST(request: Request) {
     
     // Validate request body
     const validatedData = contactSchema.parse(body);
+
+    if (!await verifyContactTurnstile(body["cf-turnstile-response"])) {
+      return NextResponse.json(
+        { error: "Verification failed. Please try again." },
+        { status: 403 }
+      );
+    }
     
     // Send email
     const { data, error } = await resend.emails.send({
@@ -61,4 +69,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
