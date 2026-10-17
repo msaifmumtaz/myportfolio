@@ -13,6 +13,9 @@ export type Project = {
   demo_url?: string;
   image_path?: string;
   show_home?: boolean;
+  seo_title?: string;
+  image_alt?: string;
+  updated?: string;
 };
 
 export function getSortedProjectsData(): Project[] {

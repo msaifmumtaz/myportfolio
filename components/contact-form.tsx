@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Script from "next/script";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { servicesContent } from "@/data/config";
 
 type FormData = { name: string; company: string; email: string; details: string };
 type ValidationIssue = { path?: (string | number)[]; message: string };
@@ -58,6 +60,14 @@ export function ContactForm() {
       },
     });
   }, []);
+  // "Start this project" links from /services pass ?service=<slug> to pre-fill the message.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get("service");
+    const service = [...servicesContent.packages, servicesContent.retainer].find(item => item.slug === slug);
+    if (!service) return;
+    const title = "subtitle" in service ? `hiring you monthly for ${service.subtitle}` : service.title;
+    setFormData(previous => previous.details ? previous : { ...previous, details: `Hi Saif, I'm interested in ${title}. ` });
+  }, []);
   useEffect(() => {
     renderTurnstile();
     return () => {
@@ -111,5 +121,6 @@ export function ContactForm() {
     {turnstileError && <div role="alert" className="form-notice">{turnstileError.message}{turnstileError.retry && <button type="button" onClick={resetTurnstile} disabled={loading} className="text-link mt-2">Retry verification</button>}</div>}
     {error && <div role="alert" className="form-notice">{error}</div>}{success && <div role="status" className="form-notice">Thanks, your message is in! I&apos;ll get back to you soon.</div>}
     <Button type="submit" disabled={loading || !turnstileToken} className="w-full">{loading ? "Sending..." : "Send Message"}<ArrowUpRight size={17} aria-hidden="true" /></Button>
+    <p className="text-xs text-text-muted leading-relaxed">I only use your details to reply to this inquiry. The message is delivered to my inbox by Resend, and Cloudflare checks you&apos;re not a bot. See the <Link href="/privacy" className="underline underline-offset-4 hover:text-accent">privacy policy</Link> for your rights.</p>
   </form>;
 }

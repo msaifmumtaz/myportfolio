@@ -20,7 +20,7 @@ export function Hero() {
           </div>
         </div>
         <div className="relative media-frame aspect-[4/5] w-full col-start-2 row-start-1 lg:row-span-2">
-          <Image src="/profile.png" alt="Profile" fill sizes="(min-width: 1024px) 240px, 96px" className="object-cover object-top" priority fetchPriority="high" />
+          <Image src="/profile.png" alt="Muhammad Saif" fill sizes="(min-width: 1024px) 240px, 96px" className="object-cover object-top" priority fetchPriority="high" />
         </div>
       </div>
     </section>

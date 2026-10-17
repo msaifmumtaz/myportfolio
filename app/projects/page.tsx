@@ -4,6 +4,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Case Studies: AI & Automation Projects",
+  description: "Real client projects: RAG chatbots, AI news automation, browser automation, Twitter/X growth tools and computer vision, with how each one was built.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   const projects = getSortedProjectsData();
@@ -12,7 +19,7 @@ export default function ProjectsPage() {
     {projects.length ? <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
       {projects.map((project, index) => <Reveal key={project.slug} delay={(index % 2) * .08}>
         <Link href={`/projects/${project.slug}`} className="project-link group block">
-          <div className="media-frame relative aspect-[16/10]">{projectImage(project) && <Image src={projectImage(project)!} alt={project.image_path ? project.title : "Illustrative concept for Facial Verification & KYC System"} fill sizes="(min-width: 768px) 600px, 100vw" className={`project-image ${project.image_path ? "object-contain p-4" : "object-cover"}`} />}</div>
+          <div className="media-frame relative aspect-[16/10]">{projectImage(project) && <Image src={projectImage(project)!} alt={project.image_alt ?? project.title} fill sizes="(min-width: 768px) 600px, 100vw" className={`project-image ${project.image_path ? "object-contain p-4" : "object-cover"}`} />}</div>
           <div className="mt-6 flex justify-between gap-5"><div><p className="font-mono text-accent text-xs mb-3">{project.category}</p><h2 className="text-2xl md:text-3xl font-medium tracking-[-.045em]">{project.title}</h2></div><ArrowUpRight size={22} className="shrink-0 mt-8 text-accent" /></div>
           <p className="text-text-muted text-sm leading-relaxed mt-4 max-w-xl">{projectSummary(project)}</p>
           <div className="flex flex-wrap gap-2 mt-5">{project.tech.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>

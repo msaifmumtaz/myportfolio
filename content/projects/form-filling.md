@@ -6,6 +6,9 @@ slug: form-filling
 demo_url: "https://webautoma.com/"
 image_path: "/projects/webautoma.png"
 show_home: true
+seo_title: "Automated Form Filling with Puppeteer"
+image_alt: "WebAutoma dashboard listing form-filling projects with their target URLs, status and creation dates"
+updated: "2026-10-05"
 ---
 
 My client needed to submit huge numbers of web forms, across many different websites, without anyone sitting at a keyboard. So I built a browser automation platform that does the work on its own and is managed from a simple dashboard.

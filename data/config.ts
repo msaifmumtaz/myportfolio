@@ -1,6 +1,13 @@
 export const siteConfig = {
   site_name: "SaifCodes - Full-Stack Developer & AI Engineer",
-  base_url: "saifcodes.com",
+  brand: "SaifCodes",
+  home_title: "Muhammad Saif – AI Engineer & Full-Stack Developer | SaifCodes",
+  home_description:
+    "I'm Muhammad Saif, AI engineer and full-stack developer in Lahore, Pakistan. I build AI chatbots, RAG systems, automations and SaaS for clients worldwide.",
+  author: "Muhammad Saif",
+  twitter_handle: "@msaifmumtaz",
+  // Canonical host. Vercel must redirect saifcodes.com here with a 308.
+  base_url: "www.saifcodes.com",
   meta_description:
     "I'm Muhammad Saif, a full-stack developer and AI engineer. For 8+ years I've been building AI products, Full-stack SaaS and the servers they run on, for clients around the world.",
   seo_keywords: [
@@ -48,6 +55,7 @@ export const navigation = {
   links: [
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
+    { label: "Services", path: "/services" },
     { label: "Projects", path: "/projects" },
     // { label: "Engineering Blog", path: "/blog" },
     { label: "Contact", path: "/contact" },
@@ -205,6 +213,71 @@ export const aboutPageContent = {
   },
 };
 
+export const servicesContent = {
+  intro: {
+    title: "Services",
+    text: "Clear prices for the things I'm asked to build most. Every project includes direct communication with me, clean handover and help after launch. Need something that isn't listed? Tell me about it and I'll send a quote.",
+  },
+  packages: [
+    {
+      slug: "website-development",
+      title: "Website Development",
+      price: "$100 – $500",
+      price_note: "one-time, based on scope",
+      description: "A fast, responsive website for your business, portfolio or product launch, built with modern tools and ready to rank on Google.",
+      includes: ["Responsive design for mobile, tablet and desktop", "Landing pages, business sites or multi-page sites", "Basic SEO setup and fast load times", "Contact forms and analytics", "Deployment to your domain and hosting"],
+      icon: "Globe",
+    },
+    {
+      slug: "shopify-store",
+      title: "Shopify Store with Custom Design",
+      price: "$200",
+      price_note: "one-time",
+      description: "A Shopify store designed around your brand, with your products, payments and shipping set up so you can start selling.",
+      includes: ["Custom theme design that matches your brand", "Product, collection and category setup", "Payment gateway and shipping configuration", "Essential apps and store settings", "Mobile-friendly checkout experience"],
+      icon: "ShoppingBag",
+    },
+    {
+      slug: "ai-chatbot",
+      title: "AI Customer Support Chatbot with Lead Generation",
+      price: "$300",
+      price_note: "one-time",
+      description: "A chatbot trained on your own content that answers customer questions around the clock and collects leads while it does.",
+      includes: ["Trained on your website, docs and FAQs", "Captures names, emails and enquiry details", "Leads sent to your email or CRM", "Embeds on any website or platform", "Hands off to a human when needed"],
+      icon: "Bot",
+      case_study: "project-chat-ai",
+    },
+    {
+      slug: "ios-macos-app",
+      title: "iOS + macOS App Development",
+      price: "$500 – $3,000",
+      price_note: "one-time, based on scope",
+      description: "Native Apple apps for iPhone, iPad and Mac, from a focused MVP to a full product with a backend behind it.",
+      includes: ["Native Swift and SwiftUI development", "One codebase for iOS and macOS where it fits", "Backend, APIs and AI features if needed", "App Store submission support", "Clean, documented source code"],
+      icon: "Smartphone",
+    },
+    {
+      slug: "ai-blog-automation",
+      title: "AI Blog Automation in WordPress",
+      price: "$300",
+      price_note: "one-time",
+      description: "A WordPress blog that keeps publishing on its own: it finds topics, writes SEO-friendly posts with AI, adds images and publishes on schedule.",
+      includes: ["Automatic topic and source gathering", "AI-written, SEO-optimized articles", "Featured images and categories", "Scheduled publishing to WordPress", "Writing style tuned to your brand"],
+      icon: "Newspaper",
+      case_study: "ai-powered-news-automation",
+    },
+  ],
+  retainer: {
+    slug: "monthly-ai-engineering",
+    title: "Hire me monthly",
+    subtitle: "AI Agents, RAG & Workflow Automation",
+    price: "$1,500",
+    price_note: "/ month, starting",
+    description: "For teams that need ongoing AI work rather than a single project. I work as part of your team, building and improving AI agents, RAG systems and automations month after month.",
+    includes: ["AI agents with LangGraph, PydanticAI and OpenAI Agents SDK", "RAG systems that answer from your own data", "Workflow automation across your tools and APIs", "Deployment, monitoring and ongoing improvements", "Regular progress updates and direct access to me"],
+  },
+};
+
 export const footerContent = {
   columns: [
     {
@@ -220,18 +293,17 @@ export const footerContent = {
       title: "Quick Links",
       links: [
         { label: "About Me", href: "/about" },
+        { label: "Services", href: "/services" },
         { label: "Contact", href: "/contact" },
         { label: "Projects", href: "/projects" },
         { label: "Schedule a Meeting", href: "https://calendly.com/ch-saif109/30min" }
       ]
     },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Terms of Service", href: "/terms" }
-      ]
-    },
+  ],
+  bottom_links: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "llms.txt", href: "/llms.txt" },
+    { label: "llms-full.txt", href: "/llms-full.txt" },
   ],
   bottom_text: " Muhammad Saif. Built with care in Lahore ❤️.",
 };

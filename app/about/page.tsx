@@ -1,15 +1,24 @@
 import { aboutPageContent } from "@/data/config";
 import { Reveal } from "@/components/ui/reveal";
 import Image from "next/image";
+import { JsonLd } from "@/components/json-ld";
+import { pageMetadata, personJsonLd } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "About Muhammad Saif, AI Engineer in Lahore",
+  description: "8+ years building AI products, SaaS and the servers they run on. Top Rated on Upwork with 67+ projects delivered. My experience, education and tools.",
+  path: "/about",
+});
 
 const categoryLabels: Record<string, string> = { frontend: "Frontend Development", backend: "Backend Engineering", ai_ml: "AI & Machine Learning", ai_agents: "AI Agents Frameworks", devops: "DevOps & Cloud", databases: "Databases & Data Storage" };
 
 export default function AboutPage() {
   const { intro, experience, education, tech_stack } = aboutPageContent;
   return <div className="site-shell document-body">
+    <JsonLd data={{ "@type": "ProfilePage", mainEntity: personJsonLd }} />
     <header className="page-intro"><h1 className="page-heading">{intro.title}</h1></header>
     <section className="grid grid-cols-1 md:grid-cols-[.7fr_1.3fr] gap-10 md:gap-20 items-center pb-20">
-      <div className="media-frame relative aspect-[4/5] max-w-md"><Image src="/profile.png" alt="Profile" fill sizes="(min-width: 768px) 420px, 100vw" className="object-cover object-top" priority /></div>
+      <div className="media-frame relative aspect-[4/5] max-w-md"><Image src="/profile.png" alt="Muhammad Saif" fill sizes="(min-width: 768px) 420px, 100vw" className="object-cover object-top" priority /></div>
       <Reveal><p className="text-xl md:text-[28px] leading-relaxed tracking-[-.025em] max-w-2xl">{intro.large_text}</p></Reveal>
     </section>
     <section className="border-t border-border-subtle section-space"><h2 className="section-heading mb-12">Experience</h2><div className="space-y-12">{experience.map(job => <Reveal key={job.role}><div className="grid grid-cols-1 md:grid-cols-[.45fr_1fr] gap-4 md:gap-12"><p className="font-mono text-sm text-accent">{job.year}</p><div><h3 className="text-2xl font-medium tracking-[-.035em]">{job.role}</h3><p className="text-text-muted mt-2 text-sm">{job.company}</p><p className="text-text-muted mt-5 max-w-2xl leading-relaxed">{job.details}</p></div></div></Reveal>)}</div></section>

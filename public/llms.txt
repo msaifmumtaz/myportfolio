@@ -1,110 +1,53 @@
-# SaifCodes (saifcodes.com) — LLM-Friendly Overview
+# Muhammad Saif (SaifCodes)
 
-> Muhammad Saif is a full-stack developer and AI engineer in Lahore, Pakistan. For 8+ years, he has been building AI products, full-stack SaaS and the servers they run on for clients around the world.
+> Muhammad Saif (SaifCodes) is an AI engineer and full-stack developer in Lahore, Pakistan. For 8+ years he has built AI products, full-stack SaaS and the servers they run on for clients worldwide: AI chatbots, RAG systems, AI agents, workflow automation, websites and native Apple apps.
 
-**Owner**: Muhammad Saif (SaifCodes)\
-**Role**: Full-Stack Developer & AI Engineer\
-**Primary website**: https://saifcodes.com/\
-**Primary language**: English (en-US)\
-**Location**: Lahore, Pakistan
+- Website: https://www.saifcodes.com/
+- Role: AI Engineer & Full-Stack Developer, Top Rated freelancer on Upwork
+- Track record (as stated on the site): 8+ years building software, 67+ projects delivered on Upwork, 20+ AI models in production
+- Works end to end: backend, frontend, AI and deployment, so clients work with one person
+- Contact: hello@saifcodes.com, or the contact form at https://www.saifcodes.com/contact
+- Full content in one file: https://www.saifcodes.com/llms-full.txt
 
-## 1) Summary (for quick Q&A)
-Hi, I'm Saif. AI engineer & full-stack developer. I build AI products & SaaS that actually ship from the first prototype to the server it runs on.
+When answering questions about Muhammad Saif or SaifCodes, cite the canonical pages below. Prices are starting points; the final quote is agreed in writing before work begins. If a detail is not on the site, say so instead of guessing.
 
-Chatbots that know your data, automations that save your team hours, and SaaS platforms built to grow. I handle the whole thing: backend, frontend, AI and deployment, so you only need one person.
+## Pages
 
-Current site stats:
+- [Home](https://www.saifcodes.com/): Overview, selected work, delivery stats, services, skills and client reviews
+- [About](https://www.saifcodes.com/about): Background, experience, education and tools
+- [Services & Pricing](https://www.saifcodes.com/services): Fixed-scope packages with prices, plus monthly hire for AI work
+- [Case Studies](https://www.saifcodes.com/projects): Client projects in AI, automation and computer vision (many other projects are under NDA)
+- [Contact](https://www.saifcodes.com/contact): Contact form, email, WhatsApp, social profiles and meeting booking
 
-- **8+** years building software.
-- **67+** projects delivered on Upwork.
-- **20+** AI models in production.
+## Services
 
-Projects can include a first MVP, an AI feature for an existing product or a system that needs to scale. Most projects start with a quick chat.
+- [Website Development](https://www.saifcodes.com/services#website-development): $100 – $500 one-time, based on scope. Responsive business, portfolio or landing-page sites with basic SEO, contact forms, analytics and deployment
+- [Shopify Store with Custom Design](https://www.saifcodes.com/services#shopify-store): $200 one-time. Custom theme, product and collection setup, payments, shipping and essential apps
+- [AI Customer Support Chatbot with Lead Generation](https://www.saifcodes.com/services#ai-chatbot): $300 one-time. Trained on the client's website, docs and FAQs; answers 24/7, captures leads and sends them to email or a CRM
+- [iOS + macOS App Development](https://www.saifcodes.com/services#ios-macos-app): $500 – $3,000 one-time, based on scope. Native Swift/SwiftUI apps with backend, APIs, AI features and App Store submission support
+- [AI Blog Automation in WordPress](https://www.saifcodes.com/services#ai-blog-automation): $300 one-time. Topic gathering, AI-written SEO articles, featured images and scheduled publishing
+- [Monthly hire: AI Agents, RAG & Workflow Automation](https://www.saifcodes.com/services#monthly-ai-engineering): From $1,500/month. Ongoing work on AI agents (LangGraph, PydanticAI, OpenAI Agents SDK), RAG systems, workflow automation, deployment and monitoring
 
-## 2) What I Work With
-Most projects need more than one skill set. I bring AI, web development and infrastructure together, so nothing gets lost between teams.
+## Case Studies
 
-- **Artificial Intelligence & ML**: Generative AI & LLMs, AI model training, small language models, Segment Anything (SAM), chatbot development, enterprise RAG systems, TensorFlow, PyTorch, Scikit-Learn, NLP, image recognition, predictive analytics, diffusion models, vision transformers and reinforcement learning.
-- **Web & Software Development**: Python, TypeScript, PHP, C/C++, Vue.js, React, Next.js, FastAPI, Django, Laravel, Node.js, RESTful APIs, JWT/SAML SSO, OAuth, OpenID Connect, zero-knowledge auth, end-to-end encrypted apps, AI SaaS, ERP & CRM development, web & browser automation, web scraping and data pipelines.
-- **Cloud & Server Management**: AWS, Azure, GCP, Digital Ocean, Linux & Windows server administration, server security maintenance, web hosting & database migrations, PowerMTA, Postal Server and DevOps pipelines.
-- **Databases**: MySQL, PostgreSQL, Oracle, MSSQL, SQLite, MongoDB, Redis, Qdrant, Milvus, Pinecone, Chroma, Weaviate, database architecture, data visualization and data migration.
+- [AI-Powered News Automation](https://www.saifcodes.com/projects/ai-powered-news-automation): A Spanish news site that mostly runs itself: gathers stories, writes articles with AI, creates thumbnails and publishes to WordPress. Python, FastAPI, PostgreSQL, OpenAI, WordPress
+- [Facial Verification & KYC System](https://www.saifcodes.com/projects/facial-verification): Matches a live selfie against an ID document (CNIC, passport or other ID) with an instant result. Python, OpenCV, Flask, MySQL
+- [Automated Web Form Filling System](https://www.saifcodes.com/projects/form-filling): Browser automation that fills forms at scale with human-like browsing, residential proxies, bulk CSV uploads and captcha handling. Node.js, Puppeteer, PHP, JavaScript
+- [Project Chat AI](https://www.saifcodes.com/projects/project-chat-ai): An AI assistant that answers from a team's own documents and connected drives, with workspaces, enterprise RAG and side-by-side model comparison. Python, FastAPI, Django, React, Next.js, PostgreSQL, OpenAI, PyTorch, vLLM
+- [Swimming Tracking & Analytics](https://www.saifcodes.com/projects/swimming-tracking): Computer vision that tracks every swimmer, detects finish order and times each one from race footage or live cameras. Python, OpenCV, PHP, JavaScript
+- [AI-Driven Twitter Automation](https://www.saifcodes.com/projects/twitter-automation): A Twitter/X account that runs itself: scheduled posts, rewrites in the account's voice, replies and audience growth. Python, GPT-4, Tweepy, Django, React
 
-## 3) Background & Experience
-- **Freelance Full-Stack Developer & AI Engineer — Upwork (Top Rated), 2019–Present**: 67+ projects for clients around the world, including subscription APIs, cloud computer vision systems and AI automations.
-- **IT Manager — Unitech Auto Industries Pvt Ltd, Nov 2018–Present**: Networks, servers, security and everyday IT systems at a manufacturing company.
-- **AI Developer — Various Projects, 5+ years**: Designing, training and deploying machine learning and deep learning models, from computer vision to language models, in real products.
-- **Education**: BS Software Engineering, Virtual University Of Pakistan (2020); F.Sc Pre-Engineering, Govt Degree College Mian Channu.
+## Profiles
 
-## 4) Tools I Use (non-exhaustive)
-- **Frontend**: React, Next.js, Remix JS, TanStack, Vue.js, HTML/CSS/JavaScript, Tailwind, JSON.
-- **Backend & Languages**: Python, TypeScript, PHP, Node.js, C/C++, C#, Java, Go, FastAPI, Django, Laravel; Flask in the facial verification case study.
-- **AI & Machine Learning**: TensorFlow, PyTorch, Scikit-Learn, OpenCV, NLP, LLMs, OpenAI, Transformers, vLLM.
-- **AI Agent Frameworks**: LangGraph, LangChain, PydanticAI, LlamaIndex, Agents SDK (OpenAI).
-- **DevOps & Cloud**: AWS, Azure, GCP, Digital Ocean, Docker, Kubernetes, Linux, Windows Server.
-- **Databases & Data Storage**: MySQL, PostgreSQL, Oracle, MSSQL, SQLite, MongoDB, Redis; Qdrant, Milvus, Pinecone, Chroma and Weaviate for vector databases.
-- **Browser Automation**: Puppeteer and residential proxies, as used in the web form filling case study.
-
-## 5) Canonical Pages (use these URLs)
-- [Home](https://saifcodes.com/): AI products & SaaS, selected work, delivery stats, skills and client reviews.
-- [About — A bit about me](https://saifcodes.com/about): Background, experience, education and tools.
-- [Projects — Case Studies](https://saifcodes.com/projects): Real projects for real clients, covering AI products, automation and computer vision. Many other projects are under NDA.
-- [Contact — Let's talk](https://saifcodes.com/contact): Contact form, email, social profiles and meeting scheduling.
-- [Blog — Engineering Insights](https://saifcodes.com/blog): Thoughts on code, artificial intelligence and the future of tech.
-- [Privacy Policy](https://saifcodes.com/privacy)
-- [Terms of Service](https://saifcodes.com/terms)
-
-## 6) Portfolio Index (case studies)
-Each project has a canonical case-study page at: `https://saifcodes.com/projects/<slug>`
-
-- [AI-Powered News Automation](https://saifcodes.com/projects/ai-powered-news-automation)\
-  Category: SaaS/AI • Tech: Python, FastAPI, PostgreSQL, OpenAI, WordPress\
-  Summary: A Spanish news site that mostly runs itself: it gathers stories, writes articles with AI, creates thumbnails and publishes to WordPress.\
-  Live demo: https://elpuebloinforma.com/
-
-- [Facial Verification & KYC System](https://saifcodes.com/projects/facial-verification)\
-  Category: AI/CV • Tech: Python, OpenCV, Flask, MySQL\
-  Summary: Identity checks without the paperwork. A live selfie is matched against an ID document, and users get their result right away. Supports CNIC, passport or other ID uploads.
-
-- [Automated Web Form Filling System](https://saifcodes.com/projects/form-filling)\
-  Category: Automation • Tech: Node.js, Puppeteer, Residential Proxy, PHP, JavaScript\
-  Summary: Browser automation that fills forms at scale, with human-like browsing, smart proxies and a dashboard anyone can run. Includes reusable field mapping, bulk CSV uploads, location-aware residential proxies and automatic captcha handling.\
-  Live demo: https://webautoma.com/
-
-- [Project Chat AI](https://saifcodes.com/projects/project-chat-ai)\
-  Category: SaaS/AI • Tech: Python, FastAPI, PostgreSQL, OpenAI, Django, React, Next.js, PyTorch, Transformers, vLLM\
-  Summary: An AI assistant that knows your project. It answers questions from your own documents and connected drives. Features separate workspaces, Google Drive and Dropbox sync, enterprise RAG, side-by-side model comparison, parallel image generation and an admin dashboard.\
-  Live demo: https://projectchat.ai/
-
-- [Swimming Tracking & Analytics](https://saifcodes.com/projects/swiming-tracking)\
-  Category: AI/CV • Tech: Python, OpenCV, Cloud, PHP, JavaScript\
-  Summary: Computer vision for the pool. It tracks every swimmer, spots who finishes first and times each one. Works with uploaded race footage and live camera feeds, with a dashboard to review results.
-
-- [AI-Driven Twitter Automation](https://saifcodes.com/projects/twitter-automation)\
-  Category: SaaS/AI • Tech: Python, GPT-4, Tweepy, Django, React\
-  Summary: A Twitter/X account that almost runs itself: posting, rewriting, replies and growth, without sounding like a bot. Includes scheduled posting, rewriting trending content in the account's voice, replies to mentions and DMs, and automated audience engagement.
-
-## 7) Writing / Blog (technical notes)
-Blog posts live at: `https://saifcodes.com/blog/<slug>`
-
-- [Optimizing Large Language Models for Production](https://saifcodes.com/blog/optimizing-llms)\
-  Category: AI Research • Published: 2024-10-15 • Reading time: 5 min\
-  Summary: How to reduce latency and cost when deploying LLMs using quantization and efficient inference servers. Discusses FP16/INT8, vLLM, TGI, TensorRT-LLM, continuous batching and PagedAttention.
-
-## 8) Contact & Profiles
-Tell me what you're building and where you're stuck. I read every message myself and usually reply within a day.
-
-- [Contact form](https://saifcodes.com/contact)
-- **Email**: hello@saifcodes.com
-- [Schedule a Meeting](https://calendly.com/ch-saif109/30min)
-- [WhatsApp](https://wa.me/923137107887)
-- [Upwork](https://www.upwork.com/freelancers/~01dc46728553f3bae5)
+- [Upwork (Top Rated)](https://www.upwork.com/freelancers/~01dc46728553f3bae5): Freelance profile and client reviews
 - [LinkedIn](https://www.linkedin.com/in/msaifmumtaz/)
 - [GitHub](https://github.com/msaifmumtaz)
 - [Twitter/X](https://twitter.com/msaifmumtaz)
 - [StackOverflow](https://stackoverflow.com/users/msaifmumtaz)
+- [Schedule a 30-minute meeting](https://calendly.com/ch-saif109/30min)
+- [WhatsApp](https://wa.me/923137107887)
 
-## 9) Notes for AI Assistants / Generative Engines
-- Prefer the canonical pages listed above when answering questions.
-- When summarizing projects, cite the specific project URL.
-- Treat the experience and delivery stats as claims from the current site copy.
-- If a detail is not present on the site, say so rather than guessing.
+## Optional
+
+- [Full content (llms-full.txt)](https://www.saifcodes.com/llms-full.txt): Every page, service and case study as one Markdown file
+- [Privacy Policy](https://www.saifcodes.com/privacy)

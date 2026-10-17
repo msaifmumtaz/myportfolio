@@ -2,10 +2,13 @@
 title: Swimming Tracking & Analytics
 category: AI/CV
 tech: ["Python", "OpenCV", "Cloud", "PHP", "JavaScript"]
-slug: swiming-tracking
+slug: swimming-tracking
 demo_url: ""
 image_path: "/projects/swiming.png"
 show_home: false
+seo_title: "Swimmer Tracking with Computer Vision"
+image_alt: "Swimmer tracking screen showing overhead pool race footage next to the detected swimmer positions"
+updated: "2026-10-05"
 ---
 
 Computer vision for the pool. Upload race footage or connect a live camera, and the system follows every swimmer, sees who touches the wall first and records each swimmer's time.

@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
 import { getSortedPostsData } from "@/lib/blog";
+import { pageMetadata } from "@/lib/seo";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() { return getSortedPostsData().map(post => ({ slug: post.slug })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getSortedPostsData().find(post => post.slug === slug);
+  if (!post) return {};
+  return pageMetadata({ title: post.title, description: post.excerpt, path: `/blog/${slug}`, noindex: true });
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

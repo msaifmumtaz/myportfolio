@@ -6,7 +6,7 @@ const summaries: Record<string, string> = {
   "facial-verification": "Identity checks without the paperwork. A live selfie is matched against an ID document, and users get their result right away.",
   "form-filling": "Browser automation that fills forms at scale, with human-like browsing, smart proxies and a dashboard anyone can run.",
   "project-chat-ai": "An AI assistant that knows your project. It answers questions from your own documents and connected drives.",
-  "swiming-tracking": "Computer vision for the pool. It tracks every swimmer, spots who finishes first and times each one.",
+  "swimming-tracking": "Computer vision for the pool. It tracks every swimmer, spots who finishes first and times each one.",
   "twitter-automation": "A Twitter/X account that almost runs itself: posting, rewriting, replies and growth, without sounding like a bot.",
 };
 export function projectSummary(project: Project) { return summaries[project.slug] || project.content.trim().split("\n")[0]; }

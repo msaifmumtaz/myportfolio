@@ -1,11 +1,14 @@
 ---
 title: Project Chat AI
 category: SaaS/AI
-tech: ["Python", "FastAPI", "PostgreSQL", "OpenAI", "Django", "React", "Next.js", "pytorch", "transformers", "vllm"]
+tech: ["Python", "FastAPI", "PostgreSQL", "OpenAI", "Django", "React", "Next.js", "PyTorch", "Transformers", "vLLM"]
 slug: project-chat-ai
 demo_url: "https://projectchat.ai/"
 image_path: "/projects/projectchat.png"
 show_home: true
+seo_title: "RAG AI Chatbot for Project Documents"
+image_alt: "Project Chat AI workspaces dashboard with projects, collaborators and a Chat with Workspaces button"
+updated: "2026-10-05"
 ---
 
 An AI assistant that actually knows your project. Upload your documents or connect Google Drive or Dropbox, and ask questions in plain English. It answers from your own data, not guesses.

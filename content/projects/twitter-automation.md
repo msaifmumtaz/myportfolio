@@ -6,6 +6,9 @@ slug: twitter-automation
 demo_url: ""
 image_path: "/projects/twitter-automation.png"
 show_home: true
+seo_title: "AI Twitter/X Automation Tool"
+image_alt: "SmartGrow.ai dashboard with AI tweet scheduling, smart replies, auto-follow and Personality AI tools"
+updated: "2026-10-05"
 ---
 
 A tool that runs a Twitter/X account almost by itself: it schedules posts, rewrites trending content in your voice, replies to mentions and DMs, and grows your audience, without sounding like a bot.

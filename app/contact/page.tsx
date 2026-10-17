@@ -2,6 +2,13 @@ import Image from "next/image";
 import { Github, Linkedin, Twitter, Mail, ExternalLink, Phone, Calendar } from "lucide-react";
 import { socialLinks } from "@/data/config";
 import { ContactForm } from "@/components/contact-form";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Hire an AI Engineer & Full-Stack Developer",
+  description: "Tell me about your project. Send a message, email hello@saifcodes.com or book a 30-minute call. I read every message myself and usually reply within a day.",
+  path: "/contact",
+});
 
 const socials = [{ key: "github", label: "GitHub", icon: Github }, { key: "linkedin", label: "LinkedIn", icon: Linkedin }, { key: "twitter", label: "Twitter", icon: Twitter }, { key: "phone", label: "WhatsApp", icon: Phone }, { key: "upwork", label: "Upwork", icon: ExternalLink }] as const;
 

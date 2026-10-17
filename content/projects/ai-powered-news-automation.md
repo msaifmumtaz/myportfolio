@@ -1,11 +1,14 @@
 ---
 title: AI-Powered News Automation
 category: SaaS/AI
-tech: ["Python", "FastAPI", "PostgreSQL", "OpenAI", "Wordpress"]
+tech: ["Python", "FastAPI", "PostgreSQL", "OpenAI", "WordPress"]
 slug: ai-powered-news-automation
 demo_url: "https://elpuebloinforma.com/"
-image_path: "/projects/ai-news-autmation.png"
+image_path: "/projects/ai-news-automation.png"
 show_home: True
+seo_title: "AI News Automation for WordPress"
+image_alt: "Homepage of El Pueblo Informa, a Spanish news site whose AI-written articles are published to WordPress automatically"
+updated: "2026-10-05"
 ---
 
 A Spanish-language news site that mostly runs itself. The system gathers stories from trusted sources, writes original articles with AI and creates a thumbnail for each one, then publishes it all to WordPress.

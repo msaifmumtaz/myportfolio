@@ -1,42 +1,30 @@
 import { MetadataRoute } from 'next';
-import { getSortedPostsData } from '@/lib/blog';
 import { getSortedProjectsData } from '@/lib/projects';
-import { siteConfig } from '@/data/config';
+import { siteUrl } from '@/lib/seo';
 
+// The blog is noindexed for now, so its posts are left out of the sitemap.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = `https://${siteConfig.base_url}`;
-  
-  // Static pages
+  // Static pages. No lastModified: a date that changes on every deploy teaches Google to ignore it.
   const routes = [
-    '',
-    '/about',
-    '/projects',
-    '/contact',
-    '/privacy',
-    '/terms',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    { path: '', priority: 1 },
+    { path: '/about', priority: 0.8 },
+    { path: '/services', priority: 0.9 },
+    { path: '/projects', priority: 0.8 },
+    { path: '/contact', priority: 0.7 },
+    { path: '/privacy', priority: 0.3 },
+  ].map(({ path, priority }) => ({
+    url: `${siteUrl}${path}`,
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority,
   }));
 
-  // Blog posts
-  const posts = getSortedPostsData().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  // Projects
+  // Projects: `updated` comes from each case study's front matter.
   const projects = getSortedProjectsData().map((project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
-    lastModified: new Date(),
+    url: `${siteUrl}/projects/${project.slug}`,
+    ...(project.updated && { lastModified: new Date(project.updated) }),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  return [...routes, ...posts, ...projects];
+  return [...routes, ...projects];
 }
-

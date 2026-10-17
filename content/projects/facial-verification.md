@@ -6,6 +6,9 @@ slug: facial-verification
 demo_url: ""
 image_path: ""
 show_home: false
+seo_title: "Facial Verification & KYC in Python"
+image_alt: "Illustrative concept: a stone bust facing a camera through a glass panel, representing facial verification"
+updated: "2026-10-05"
 ---
 
 Identity checks without the paperwork. A user takes a selfie, uploads their CNIC or passport, and the system tells them right away whether the two faces match.
