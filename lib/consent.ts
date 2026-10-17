@@ -17,8 +17,8 @@ function readStoredChoice(): ConsentChoice | null {
     const stored = JSON.parse(localStorage.getItem(storageKey) ?? "null");
     if ((stored?.choice === "granted" || stored?.choice === "denied") && Date.now() - stored.at < maxAge) return stored.choice;
   } catch {}
-  // Global Privacy Control is an explicit opt-out signal, so treat it as a refusal until the visitor says otherwise.
-  return (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl ? "denied" : null;
+  // No stored answer means a new (or expired) visitor: the banner opens, and nothing is tracked until they accept.
+  return null;
 }
 
 function update(next: Partial<ConsentState>) {

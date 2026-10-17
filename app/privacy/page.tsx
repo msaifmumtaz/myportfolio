@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
           </p>
           <p className="mb-4">
             You can change or withdraw your consent at any time with the &quot;Cookie settings&quot; link in the footer or right here:{" "}
-            <CookieSettingsButton className="font-medium text-primary-indigo underline underline-offset-4" />. When you withdraw consent, Google Analytics stops collecting data and its cookies are deleted. I also honour the Global Privacy Control signal as a refusal. After six months I&apos;ll ask you again.
+            <CookieSettingsButton className="font-medium text-primary-indigo underline underline-offset-4" />. When you withdraw consent, Google Analytics stops collecting data and its cookies are deleted. Until you choose, nothing is collected. After six months I&apos;ll ask you again.
           </p>
         </section>
 
