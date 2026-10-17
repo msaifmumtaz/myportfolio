@@ -33,7 +33,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <p className="font-mono text-sm text-accent mb-4">{project.category}</p>
       <h1 className="page-heading max-w-5xl">{project.title}</h1>
       <div className="flex flex-wrap gap-2 mt-7">{project.tech.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
-      {project.demo_url && <a href={project.demo_url} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "mt-8")}>View Live Demo<ArrowUpRight size={17} /></a>}
+      {(project.demo_url || project.repo_url) && <div className="flex flex-wrap gap-3 mt-8">
+        {project.demo_url && <a href={project.demo_url} target="_blank" rel="noopener noreferrer" className={buttonClass("primary")}>View Live Demo<ArrowUpRight size={17} /></a>}
+        {project.repo_url && <a href={project.repo_url} target="_blank" rel="noopener noreferrer" className={buttonClass(project.demo_url ? "secondary" : "primary")}>View Source on GitHub<ArrowUpRight size={17} /></a>}
+      </div>}
     </header>
     {image && <figure className="mb-16"><div className="media-frame relative aspect-[16/9]"><Image src={image} alt={project.image_alt ?? project.title} fill sizes="(min-width: 1280px) 1248px, 100vw" className={project.image_path ? "object-contain p-4 md:p-10" : "object-cover"} priority /></div>{!project.image_path && <figcaption className="text-xs text-text-muted mt-3">Illustrative concept for facial verification.</figcaption>}</figure>}
     <div className="prose prose-lg max-w-[78ch] mx-auto"><MDXRemote source={project.content} /></div>

@@ -4,6 +4,7 @@ import type { Project } from "@/lib/projects";
 const summaries: Record<string, string> = {
   "ai-powered-news-automation": "A Spanish news site that mostly runs itself: it gathers stories, writes articles with AI, creates thumbnails and publishes to WordPress.",
   "facial-verification": "Identity checks without the paperwork. A live selfie is matched against an ID document, and users get their result right away.",
+  "folio-pdf": "A native, private PDF reader for iPhone with a book-style page flip, annotations and safe exports, built with SwiftUI and PDFKit.",
   "form-filling": "Browser automation that fills forms at scale, with human-like browsing, smart proxies and a dashboard anyone can run.",
   "project-chat-ai": "An AI assistant that knows your project. It answers questions from your own documents and connected drives.",
   "swimming-tracking": "Computer vision for the pool. It tracks every swimmer, spots who finishes first and times each one.",

@@ -96,7 +96,7 @@ ${projects.map(project => `### ${project.title}
 
 - URL: ${absoluteUrl(`/projects/${project.slug}`)}
 - Category: ${project.category}
-- Tech: ${project.tech.join(", ")}${project.demo_url ? `\n- Live site: ${project.demo_url}` : ""}
+- Tech: ${project.tech.join(", ")}${project.demo_url ? `\n- Live site: ${project.demo_url}` : ""}${project.repo_url ? `\n- Source code: ${project.repo_url}` : ""}
 
 ${demoteHeadings(project.content.trim(), 1)}`).join("\n\n")}
 

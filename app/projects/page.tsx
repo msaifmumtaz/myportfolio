@@ -23,7 +23,7 @@ export default function ProjectsPage() {
           <div className="mt-6 flex justify-between gap-5"><div><p className="font-mono text-accent text-xs mb-3">{project.category}</p><h2 className="text-2xl md:text-3xl font-medium tracking-[-.045em]">{project.title}</h2></div><ArrowUpRight size={22} className="shrink-0 mt-8 text-accent" /></div>
           <p className="text-text-muted text-sm leading-relaxed mt-4 max-w-xl">{projectSummary(project)}</p>
           <div className="flex flex-wrap gap-2 mt-5">{project.tech.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
-          <div className="mt-6 flex flex-wrap items-center gap-4 text-sm"><span className="text-link">View Case Study <span aria-hidden="true">→</span></span>{project.demo_url && <span className="text-text-muted text-xs">Live Demo Available</span>}{!project.image_path && <span className="text-text-muted text-xs">Illustrative concept</span>}</div>
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-sm"><span className="text-link">View Case Study <span aria-hidden="true">→</span></span>{project.demo_url && <span className="text-text-muted text-xs">Live Demo Available</span>}{project.repo_url && <span className="text-text-muted text-xs">Open Source</span>}{!project.image_path && <span className="text-text-muted text-xs">Illustrative concept</span>}</div>
         </Link>
       </Reveal>)}
     </div> : <p className="form-notice">Case studies will appear here when projects are added.</p>}

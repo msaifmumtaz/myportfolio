@@ -255,6 +255,7 @@ export const servicesContent = {
       description: "Native Apple apps for iPhone, iPad and Mac, from a focused MVP to a full product with a backend behind it.",
       includes: ["Native Swift and SwiftUI development", "One codebase for iOS and macOS where it fits", "Backend, APIs and AI features if needed", "App Store submission support", "Clean, documented source code"],
       icon: "Smartphone",
+      case_study: "folio-pdf",
     },
     {
       slug: "ai-blog-automation",

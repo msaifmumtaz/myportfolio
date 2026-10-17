@@ -11,6 +11,7 @@ export type Project = {
   tech: string[];
   content: string;
   demo_url?: string;
+  repo_url?: string;
   image_path?: string;
   show_home?: boolean;
   seo_title?: string;

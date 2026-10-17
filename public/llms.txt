@@ -31,6 +31,7 @@ When answering questions about Muhammad Saif or SaifCodes, cite the canonical pa
 ## Case Studies
 
 - [AI-Powered News Automation](https://www.saifcodes.com/projects/ai-powered-news-automation): A Spanish news site that mostly runs itself: gathers stories, writes articles with AI, creates thumbnails and publishes to WordPress. Python, FastAPI, PostgreSQL, OpenAI, WordPress
+- [Folio PDF – Native iOS PDF Reader](https://www.saifcodes.com/projects/folio-pdf): An open-source, private PDF reader for iPhone with a library, book-style Flip reading, annotations and exports that never modify the original. Swift, SwiftUI, PDFKit, SwiftData. Source: https://github.com/msaifmumtaz/folio-pdf
 - [Facial Verification & KYC System](https://www.saifcodes.com/projects/facial-verification): Matches a live selfie against an ID document (CNIC, passport or other ID) with an instant result. Python, OpenCV, Flask, MySQL
 - [Automated Web Form Filling System](https://www.saifcodes.com/projects/form-filling): Browser automation that fills forms at scale with human-like browsing, residential proxies, bulk CSV uploads and captcha handling. Node.js, Puppeteer, PHP, JavaScript
 - [Project Chat AI](https://www.saifcodes.com/projects/project-chat-ai): An AI assistant that answers from a team's own documents and connected drives, with workspaces, enterprise RAG and side-by-side model comparison. Python, FastAPI, Django, React, Next.js, PostgreSQL, OpenAI, PyTorch, vLLM
