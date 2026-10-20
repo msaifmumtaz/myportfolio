@@ -1,16 +1,19 @@
 export const siteConfig = {
   site_name: "SaifCodes - Full-Stack Developer & AI Engineer",
   brand: "SaifCodes",
-  home_title: "Muhammad Saif – AI Engineer & Full-Stack Developer | SaifCodes",
+  home_title: "Custom RAG & AI Workflow Automation Developer – Muhammad Saif",
   home_description:
-    "I'm Muhammad Saif, AI engineer and full-stack developer in Lahore, Pakistan. I build AI chatbots, RAG systems, automations and SaaS for clients worldwide.",
+    "I'm Muhammad Saif, an AI engineer and full-stack developer. I build custom RAG systems and AI workflow automation for startups and small teams, plus websites and iOS/macOS apps.",
   author: "Muhammad Saif",
   twitter_handle: "@msaifmumtaz",
   // Canonical host. Vercel must redirect saifcodes.com here with a 308.
   base_url: "www.saifcodes.com",
   meta_description:
-    "I'm Muhammad Saif, a full-stack developer and AI engineer. For 8+ years I've been building AI products, Full-stack SaaS and the servers they run on, for clients around the world.",
+    "I'm Muhammad Saif, a full-stack developer and AI engineer. I build custom RAG systems and AI workflow automation for startups and small teams, from the first demo to the server it runs on.",
   seo_keywords: [
+    "RAG Development",
+    "AI Workflow Automation",
+    "AI Chatbot Development",
     "Full Stack Developer",
     "AI Engineer",
     "Server Management",
@@ -65,9 +68,9 @@ export const navigation = {
 export const homePageContent = {
   hero: {
     tagline: "Hi, I'm Saif. AI engineer & full-stack developer",
-    headline: "I build <span class='text-primary-indigo'>AI products & SaaS</span> that actually ship from the first prototype to the server it runs on.",
+    headline: "I build <span class='text-primary-indigo'>custom RAG systems & AI workflow automation</span> for startups and small teams.",
     subtext:
-      "Chatbots that know your data, automations that save your team hours, and SaaS platforms built to grow. I handle the whole thing: backend, frontend, AI and deployment, so you only need one person.",
+      "You work with me directly on a scope we agree in writing, and you see a working demo early. I build the whole thing: data pipeline, backend, interface and the server it runs on. I also build websites and native iOS and macOS apps.",
     cta: ["See my work", "Tell me about your project"],
   },
   tech_ticker:[""],
@@ -216,56 +219,122 @@ export const aboutPageContent = {
 export const servicesContent = {
   intro: {
     title: "Services",
-    text: "Clear prices for the things I'm asked to build most. Every project includes direct communication with me, clean handover and help after launch. Need something that isn't listed? Tell me about it and I'll send a quote.",
+    text: "I mostly build custom RAG systems and AI workflow automation for startups and small teams. I also build websites and native iOS and macOS apps. You work with me directly, the scope is agreed in writing before work starts, and you see a working demo early. I build the app and the infrastructure it runs on.",
   },
+  // How long bug fixes are covered after launch on every fixed-price project.
+  support_window: "14 days",
+  categories: [
+    { id: "ai", title: "AI systems", text: "RAG systems that answer from your own documents, automations that take repetitive work off your team, and chatbots for your website." },
+    { id: "web", title: "Websites & stores", text: "Fast business websites and Shopify stores, built, deployed and ready to rank." },
+    { id: "apple", title: "iOS & macOS apps", text: "Native Swift and SwiftUI apps for iPhone, iPad and Mac." },
+  ],
   packages: [
     {
+      slug: "rag-development",
+      category: "ai",
+      title: "Custom RAG Development",
+      price: "Fixed quote",
+      price_note: "after a free scoping call",
+      description: "A question-answering system over your internal documents, with answers that cite their sources. I build the ingestion, permissions, retrieval, interface and hosting, and test it against your team's real questions before launch.",
+      includes: ["Ingestion from files, drives, wikis or databases", "Access rules when different people should see different documents", "Source citations on every answer", "An evaluation set built from your real questions", "Deployment to your cloud or a server you own"],
+      scope: {
+        you_pay: ["AI model API usage, billed to your own account", "Hosting and vector database fees, paid to the provider directly"],
+        not_included: ["Data sources not named in the written scope", "Model fine-tuning or self-hosted GPU models, quoted separately"],
+      },
+      icon: "FileSearch",
+      page: "/services/rag-development",
+      case_study: "project-chat-ai",
+    },
+    {
+      slug: "ai-workflow-automation",
+      category: "ai",
+      title: "AI Workflow Automation",
+      price: "Fixed quote",
+      price_note: "after a free scoping call",
+      description: "One internal workflow automated from start to finish: pulling data in, using AI where it helps, updating your CRM or other tools, and asking a person to approve when a step needs it.",
+      includes: ["A written map of the workflow before I build anything", "Integrations with your CRM, email, sheets or APIs", "Retries, logging and failure alerts", "Approval steps where a person should decide", "A short handover document and recorded walkthrough"],
+      scope: {
+        you_pay: ["AI model API usage, billed to your own account", "Hosting and any paid plans for the tools being connected"],
+        not_included: ["Workflows or integrations not named in the written scope", "Ongoing operation after the support window, unless you hire me monthly"],
+      },
+      icon: "Workflow",
+      page: "/services/ai-workflow-automation",
+      case_study: "ai-powered-news-automation",
+    },
+    {
+      slug: "ai-chatbot",
+      category: "ai",
+      title: "AI Customer Support Chatbot with Lead Generation",
+      price: "$300",
+      price_note: "one-time",
+      description: "A chatbot for your website that answers from your own content and collects leads while it does.",
+      includes: ["Answers from your website, docs and FAQs", "Captures names, emails and enquiry details", "Leads sent to your email or one CRM", "Embeds on any website or platform", "Offers to connect visitors with a person when it can't answer"],
+      scope: {
+        you_pay: ["AI model API usage, billed to your own account", "Hosting, if it isn't added to a server you already have"],
+        not_included: ["Internal or permission-restricted documents (that's custom RAG development)", "More than one CRM, a live-chat inbox or multiple languages, quoted separately"],
+      },
+      icon: "Bot",
+      page: "/services/ai-chatbot-development",
+    },
+    {
+      slug: "ai-blog-automation",
+      category: "ai",
+      title: "AI Blog Automation in WordPress",
+      price: "$300",
+      price_note: "one-time",
+      description: "A WordPress blog that keeps publishing: it finds topics from sources you approve, writes posts with AI, adds images and publishes on a schedule, or saves drafts for you to review first.",
+      includes: ["Topic gathering from a source list you approve", "AI-written articles in a style tuned to your brand", "Featured images and categories", "Scheduled publishing, or drafts for review", "One WordPress site"],
+      scope: {
+        you_pay: ["AI model API usage for text and images, billed to your own account", "WordPress hosting"],
+        not_included: ["Multiple sites or languages, quoted separately", "Editorial review of published posts"],
+      },
+      icon: "Newspaper",
+      // Not its own page: links to the workflow automation page for how these pipelines are built.
+      related_page: "/services/ai-workflow-automation",
+      case_study: "ai-powered-news-automation",
+    },
+    {
       slug: "website-development",
+      category: "web",
       title: "Website Development",
       price: "$100 – $500",
       price_note: "one-time, based on scope",
       description: "A fast, responsive website for your business, portfolio or product launch, built with modern tools and ready to rank on Google.",
       includes: ["Responsive design for mobile, tablet and desktop", "Landing pages, business sites or multi-page sites", "Basic SEO setup and fast load times", "Contact forms and analytics", "Deployment to your domain and hosting"],
+      scope: {
+        you_pay: ["Domain and hosting", "Any paid fonts, images or plugins"],
+        not_included: ["Writing the page copy, unless agreed in the quote", "Online stores and custom web apps, quoted separately"],
+      },
       icon: "Globe",
     },
     {
       slug: "shopify-store",
+      category: "web",
       title: "Shopify Store with Custom Design",
       price: "$200",
       price_note: "one-time",
       description: "A Shopify store designed around your brand, with your products, payments and shipping set up so you can start selling.",
       includes: ["Custom theme design that matches your brand", "Product, collection and category setup", "Payment gateway and shipping configuration", "Essential apps and store settings", "Mobile-friendly checkout experience"],
+      scope: {
+        you_pay: ["Your Shopify plan and any paid apps or themes", "Payment processing fees"],
+        not_included: ["Product photography and descriptions", "Custom Shopify apps, quoted separately"],
+      },
       icon: "ShoppingBag",
     },
     {
-      slug: "ai-chatbot",
-      title: "AI Customer Support Chatbot with Lead Generation",
-      price: "$300",
-      price_note: "one-time",
-      description: "A chatbot trained on your own content that answers customer questions around the clock and collects leads while it does.",
-      includes: ["Trained on your website, docs and FAQs", "Captures names, emails and enquiry details", "Leads sent to your email or CRM", "Embeds on any website or platform", "Hands off to a human when needed"],
-      icon: "Bot",
-      case_study: "project-chat-ai",
-    },
-    {
       slug: "ios-macos-app",
+      category: "apple",
       title: "iOS + macOS App Development",
       price: "$500 – $3,000",
       price_note: "one-time, based on scope",
       description: "Native Apple apps for iPhone, iPad and Mac, from a focused MVP to a full product with a backend behind it.",
-      includes: ["Native Swift and SwiftUI development", "One codebase for iOS and macOS where it fits", "Backend, APIs and AI features if needed", "App Store submission support", "Clean, documented source code"],
+      includes: ["Native Swift and SwiftUI development", "One codebase for iOS and macOS where it fits", "Backend, APIs and AI features if needed", "App Store submission support", "Clean, documented source code in your repository"],
+      scope: {
+        you_pay: ["Apple Developer Program membership", "Backend hosting and any API usage"],
+        not_included: ["Android apps", "Guaranteed App Store approval (Apple makes the final call)"],
+      },
       icon: "Smartphone",
       case_study: "folio-pdf",
-    },
-    {
-      slug: "ai-blog-automation",
-      title: "AI Blog Automation in WordPress",
-      price: "$300",
-      price_note: "one-time",
-      description: "A WordPress blog that keeps publishing on its own: it finds topics, writes SEO-friendly posts with AI, adds images and publishes on schedule.",
-      includes: ["Automatic topic and source gathering", "AI-written, SEO-optimized articles", "Featured images and categories", "Scheduled publishing to WordPress", "Writing style tuned to your brand"],
-      icon: "Newspaper",
-      case_study: "ai-powered-news-automation",
     },
   ],
   retainer: {
@@ -275,7 +344,11 @@ export const servicesContent = {
     price: "$1,500",
     price_note: "/ month, starting",
     description: "For teams that need ongoing AI work rather than a single project. I work as part of your team, building and improving AI agents, RAG systems and automations month after month.",
-    includes: ["AI agents with LangGraph, PydanticAI and OpenAI Agents SDK", "RAG systems that answer from your own data", "Workflow automation across your tools and APIs", "Deployment, monitoring and ongoing improvements", "Regular progress updates and direct access to me"],
+    includes: ["AI agents with LangGraph, PydanticAI and OpenAI Agents SDK", "RAG systems that answer from your own data", "Workflow automation across your tools and APIs", "Deployment, monitoring and ongoing improvements", "Priorities agreed each month, with regular progress updates and direct access to me"],
+    scope: {
+      you_pay: ["AI model API usage, hosting and third-party tools, billed to your own accounts"],
+      not_included: ["Work beyond the priorities agreed for the month, which moves to the next month or is quoted separately"],
+    },
   },
 };
 
@@ -288,6 +361,16 @@ export const footerContent = {
         { label: "StackOverflow", href: "https://stackoverflow.com/users/msaifmumtaz" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/msaifmumtaz/" },
         { label: "GitHub", href: "https://github.com/msaifmumtaz" }
+      ]
+    },
+    {
+      title: "Services",
+      links: [
+        { label: "RAG Development", href: "/services/rag-development" },
+        { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
+        { label: "AI Chatbot Development", href: "/services/ai-chatbot-development" },
+        { label: "iOS & macOS Apps", href: "/services#ios-macos-app" },
+        { label: "Guides", href: "/guides" },
       ]
     },
     {

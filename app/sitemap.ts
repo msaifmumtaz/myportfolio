@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getSortedProjectsData } from '@/lib/projects';
+import { getGuides } from '@/lib/guides';
+import { servicePages } from '@/data/service-pages';
 import { siteUrl } from '@/lib/seo';
 
 // The blog is noindexed for now, so its posts are left out of the sitemap.
@@ -10,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about', priority: 0.8 },
     { path: '/services', priority: 0.9 },
     { path: '/projects', priority: 0.8 },
+    { path: '/guides', priority: 0.6 },
     { path: '/contact', priority: 0.7 },
     { path: '/privacy', priority: 0.3 },
   ].map(({ path, priority }) => ({
@@ -26,5 +29,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...projects];
+  // Service pages and guides carry their own `updated` dates.
+  const services = servicePages.map((page) => ({
+    url: `${siteUrl}/services/${page.slug}`,
+    lastModified: new Date(page.updated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
+  const guides = getGuides().map((guide) => ({
+    url: `${siteUrl}/guides/${guide.slug}`,
+    lastModified: new Date(guide.updated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...services, ...guides, ...projects];
 }

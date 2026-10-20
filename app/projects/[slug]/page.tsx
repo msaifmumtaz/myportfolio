@@ -25,7 +25,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = getSortedProjectsData().find(project => project.slug === slug);
   if (!project) notFound();
   const image = projectImage(project);
-  const service = servicesContent.packages.find(service => service.case_study === slug);
+  // A service with its own page wins, so Project Chat AI leads to RAG development rather than a package card.
+  const matches = servicesContent.packages.filter(service => service.case_study === slug);
+  const service = matches.find(service => service.page) ?? matches[0];
   return <article className="site-shell document-body">
     <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Case Studies", path: "/projects" }, { name: project.title, path: `/projects/${slug}` }])} />
     <header className="page-intro">
@@ -40,6 +42,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </header>
     {image && <figure className="mb-16"><div className="media-frame relative aspect-[16/9]"><Image src={image} alt={project.image_alt ?? project.title} fill sizes="(min-width: 1280px) 1248px, 100vw" className={project.image_path ? "object-contain p-4 md:p-10" : "object-cover"} priority /></div>{!project.image_path && <figcaption className="text-xs text-text-muted mt-3">Illustrative concept for facial verification.</figcaption>}</figure>}
     <div className="prose prose-lg max-w-[78ch] mx-auto"><MDXRemote source={project.content} /></div>
-    {service && <aside className="max-w-[78ch] mx-auto mt-16 border-t border-border-subtle pt-8"><p className="text-sm text-text-muted mb-3">Want something like this?</p><Link href={`/services#${service.slug}`} className="text-link text-lg">{service.title}, {service.price}<ArrowUpRight size={17} /></Link></aside>}
+    {service && <aside className="max-w-[78ch] mx-auto mt-16 border-t border-border-subtle pt-8"><p className="text-sm text-text-muted mb-3">Want something like this?</p><Link href={service.page ?? `/services#${service.slug}`} className="text-link text-lg">{service.title}<ArrowUpRight size={17} /></Link><p className="mt-2 text-sm text-text-muted">{service.price} {service.price_note}</p></aside>}
   </article>;
 }

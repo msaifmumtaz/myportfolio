@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import type { SearchEntry } from "@/lib/site-search";
 
 const stopWords = new Set(["the", "and", "for", "with", "page", "www", "html", "php", "index"]);
-const suggestions = ["AI chatbot", "Shopify", "Automation", "Computer vision", "Website"];
+const suggestions = ["RAG", "AI chatbot", "Automation", "iOS app", "Website"];
 
 const normalize = (text: string) => text.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, " ").trim();
 const tokenize = (text: string) => normalize(text).split(" ").filter(token => token.length > 1 && !stopWords.has(token));

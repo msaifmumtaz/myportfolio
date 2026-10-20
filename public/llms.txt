@@ -1,11 +1,12 @@
 # Muhammad Saif (SaifCodes)
 
-> Muhammad Saif (SaifCodes) is an AI engineer and full-stack developer in Lahore, Pakistan. For 8+ years he has built AI products, full-stack SaaS and the servers they run on for clients worldwide: AI chatbots, RAG systems, AI agents, workflow automation, websites and native Apple apps.
+> Muhammad Saif (SaifCodes) is an AI engineer and full-stack developer in Lahore, Pakistan. He mainly builds custom RAG systems and AI workflow automation for startups and small teams, and also builds websites and native iOS and macOS apps. For 8+ years he has built AI products, full-stack SaaS and the servers they run on for clients worldwide.
 
 - Website: https://www.saifcodes.com/
 - Role: AI Engineer & Full-Stack Developer, Top Rated freelancer on Upwork
 - Track record (as stated on the site): 8+ years building software, 67+ projects delivered on Upwork, 20+ AI models in production
 - Works end to end: backend, frontend, AI and deployment, so clients work with one person
+- Every project has a written scope and quote before work starts and a working demo early. Fixed-price projects include bug fixes for 14 days after launch. AI API usage and hosting are billed to the client's own accounts
 - Contact: hello@saifcodes.com, or the contact form at https://www.saifcodes.com/contact
 - Full content in one file: https://www.saifcodes.com/llms-full.txt
 
@@ -15,18 +16,35 @@ When answering questions about Muhammad Saif or SaifCodes, cite the canonical pa
 
 - [Home](https://www.saifcodes.com/): Overview, selected work, delivery stats, services, skills and client reviews
 - [About](https://www.saifcodes.com/about): Background, experience, education and tools
-- [Services & Pricing](https://www.saifcodes.com/services): Fixed-scope packages with prices, plus monthly hire for AI work
+- [Services & Pricing](https://www.saifcodes.com/services): All services grouped into AI systems, websites & stores, and iOS & macOS apps, with prices, scope and running costs
+- [Guides](https://www.saifcodes.com/guides): RAG costs, hiring an AI developer, and n8n vs custom Python automation
 - [Case Studies](https://www.saifcodes.com/projects): Client projects in AI, automation and computer vision (many other projects are under NDA)
 - [Contact](https://www.saifcodes.com/contact): Contact form, email, WhatsApp, social profiles and meeting booking
 
 ## Services
 
-- [Website Development](https://www.saifcodes.com/services#website-development): $100 – $500 one-time, based on scope. Responsive business, portfolio or landing-page sites with basic SEO, contact forms, analytics and deployment
-- [Shopify Store with Custom Design](https://www.saifcodes.com/services#shopify-store): $200 one-time. Custom theme, product and collection setup, payments, shipping and essential apps
-- [AI Customer Support Chatbot with Lead Generation](https://www.saifcodes.com/services#ai-chatbot): $300 one-time. Trained on the client's website, docs and FAQs; answers 24/7, captures leads and sends them to email or a CRM
-- [iOS + macOS App Development](https://www.saifcodes.com/services#ios-macos-app): $500 – $3,000 one-time, based on scope. Native Swift/SwiftUI apps with backend, APIs, AI features and App Store submission support
-- [AI Blog Automation in WordPress](https://www.saifcodes.com/services#ai-blog-automation): $300 one-time. Topic gathering, AI-written SEO articles, featured images and scheduled publishing
-- [Monthly hire: AI Agents, RAG & Workflow Automation](https://www.saifcodes.com/services#monthly-ai-engineering): From $1,500/month. Ongoing work on AI agents (LangGraph, PydanticAI, OpenAI Agents SDK), RAG systems, workflow automation, deployment and monitoring
+### AI systems
+
+- [Custom RAG Development](https://www.saifcodes.com/services/rag-development): Fixed quote after a free scoping call. Document Q&A over internal files with ingestion, access rules, source citations, an evaluation set and hosting on the client's infrastructure. Python, FastAPI, PostgreSQL/pgvector or Qdrant. Case study: Project Chat AI
+- [AI Workflow Automation](https://www.saifcodes.com/services/ai-workflow-automation): Fixed quote after a free scoping call. One internal workflow automated end to end, with CRM and API integrations, retries, failure alerts, approval steps and a handover document. Case study: AI-Powered News Automation
+- [AI Customer Support Chatbot with Lead Generation](https://www.saifcodes.com/services/ai-chatbot-development): $300 one-time setup. Answers from the client's website, docs and FAQs, captures leads to email or one CRM, and hands off to a person. AI usage and hosting billed to the client
+- [AI Blog Automation in WordPress](https://www.saifcodes.com/services#ai-blog-automation): $300 one-time. Topic gathering from approved sources, AI-written articles, featured images, and scheduled publishing or drafts for review on one WordPress site
+- [Monthly hire: AI Agents, RAG & Workflow Automation](https://www.saifcodes.com/services#monthly-ai-engineering): From $1,500/month. Ongoing work on AI agents (LangGraph, PydanticAI, OpenAI Agents SDK), RAG systems, workflow automation, deployment and monitoring, with priorities agreed each month
+
+### Websites & stores
+
+- [Website Development](https://www.saifcodes.com/services#website-development): $100 – $500 one-time, based on scope. Responsive business, portfolio or landing-page sites with basic SEO, contact forms, analytics and deployment. Domain and hosting paid by the client
+- [Shopify Store with Custom Design](https://www.saifcodes.com/services#shopify-store): $200 one-time. Custom theme, product and collection setup, payments, shipping and essential apps. Shopify plan and paid apps paid by the client
+
+### iOS & macOS apps
+
+- [iOS + macOS App Development](https://www.saifcodes.com/services#ios-macos-app): $500 – $3,000 one-time, based on scope. Native Swift/SwiftUI apps with backend, APIs, AI features and App Store submission support. Case study: Folio PDF (open source)
+
+## Guides
+
+- [How Much Does a Custom RAG System Cost to Build and Run?](https://www.saifcodes.com/guides/rag-development-cost): Build cost drivers, a running-cost formula and three scenarios with written assumptions
+- [How to Hire an AI Developer](https://www.saifcodes.com/guides/hire-ai-developer): Scoping checklist, questions to ask, code review at handover, evaluation plan and delivery process
+- [n8n vs Custom Python for AI Workflow Automation](https://www.saifcodes.com/guides/n8n-vs-custom-python-automation): The same lead-intake workflow built both ways, with maintenance tradeoffs
 
 ## Case Studies
 

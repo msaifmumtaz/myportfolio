@@ -1,5 +1,6 @@
 import { navigation, servicesContent } from "@/data/config";
 import { getSortedProjectsData } from "@/lib/projects";
+import { getGuides } from "@/lib/guides";
 import { projectSummary } from "@/lib/project-presentation";
 
 export type SearchEntry = { title: string; href: string; kind: string; description: string; keywords: string };
@@ -7,7 +8,7 @@ export type SearchEntry = { title: string; href: string; kind: string; descripti
 const pageDescriptions: Record<string, string> = {
   "/": "AI engineer and full-stack developer building RAG systems, chatbots and automations.",
   "/about": "Experience, education and the tech stack behind the work.",
-  "/services": "Websites, Shopify stores, AI chatbots, Apple apps and monthly AI engineering, with clear prices.",
+  "/services": "Custom RAG development, AI workflow automation, AI chatbots, websites, Shopify stores and Apple apps, with clear prices.",
   "/projects": "Case studies covering AI products, automation and computer vision.",
   "/contact": "Send a message, email or book a 30-minute call.",
 };
@@ -18,7 +19,7 @@ export function buildSearchIndex(): SearchEntry[] {
   const { packages, retainer } = servicesContent;
   const services = [...packages, retainer].map(service => ({
     title: service.title,
-    href: `/services#${service.slug}`,
+    href: "page" in service && service.page ? service.page : `/services#${service.slug}`,
     kind: "Service",
     description: service.description,
     keywords: [service.price, ...service.includes].join(" "),
@@ -30,6 +31,8 @@ export function buildSearchIndex(): SearchEntry[] {
     description: projectSummary(project),
     keywords: [project.slug, project.category, ...project.tech].join(" "),
   }));
+  const guideIndex = { title: "Guides", href: "/guides", kind: "Page", description: "RAG costs, hiring an AI developer and n8n vs custom Python automation.", keywords: "guides" };
+  const guides = [guideIndex, ...getGuides().map(guide => ({ title: guide.title, href: `/guides/${guide.slug}`, kind: "Guide", description: guide.description, keywords: guide.slug.replace(/-/g, " ") }))];
   const legal = { title: "Privacy Policy", href: "/privacy", kind: "Page", description: "How this site handles your data, cookies and analytics.", keywords: "cookies analytics gdpr" };
-  return [...pages, ...services, ...projects, legal];
+  return [...pages, ...services, ...guides, ...projects, legal];
 }

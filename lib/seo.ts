@@ -50,8 +50,11 @@ export const websiteJsonLd = {
 };
 
 // "$100 – $500" -> range, "$200" -> fixed price, "$1,500" + "/ month, starting" -> monthly minimum.
+// "Fixed quote" has no number, so that offer is listed without a price.
 function priceSpecification(price: string, note: string) {
-  const [min, max] = price.match(/[\d,]+/g)!.map(value => Number(value.replace(/,/g, "")));
+  const numbers = price.match(/[\d,]+/g);
+  if (!numbers) return undefined;
+  const [min, max] = numbers.map(value => Number(value.replace(/,/g, "")));
   const monthly = note.includes("month");
   const base = { "@type": monthly ? "UnitPriceSpecification" : "PriceSpecification", priceCurrency: "USD", ...(monthly && { unitCode: "MON" }) };
   return max || note.includes("starting") ? { ...base, minPrice: min, ...(max && { maxPrice: max }) } : { ...base, price: min };
@@ -59,12 +62,7 @@ function priceSpecification(price: string, note: string) {
 
 export function servicesJsonLd() {
   const { packages, retainer } = servicesContent;
-  const offers = [...packages, { ...retainer, title: `${retainer.title}: ${retainer.subtitle}` }].map(service => ({
-    "@type": "Offer",
-    url: absoluteUrl(`/services#${service.slug}`),
-    priceSpecification: priceSpecification(service.price, service.price_note),
-    itemOffered: { "@type": "Service", name: service.title, description: service.description },
-  }));
+  const offers = [...packages, { ...retainer, title: `${retainer.title}: ${retainer.subtitle}` }].map(service => serviceOffer(service));
   return {
     "@type": "ProfessionalService",
     "@id": `${siteUrl}/services#business`,
@@ -77,6 +75,47 @@ export function servicesJsonLd() {
     areaServed: "Worldwide",
     founder: { "@id": personId },
     makesOffer: offers,
+  };
+}
+
+type ServiceOffer = { slug: string; title: string; price: string; price_note: string; description: string; page?: string };
+
+function serviceOffer(service: ServiceOffer) {
+  const priceSpec = priceSpecification(service.price, service.price_note);
+  return {
+    "@type": "Offer",
+    url: absoluteUrl(service.page ?? `/services#${service.slug}`),
+    ...(priceSpec && { priceSpecification: priceSpec }),
+    itemOffered: { "@type": "Service", name: service.title, description: service.description },
+  };
+}
+
+// A dedicated /services/<slug> page: the service itself, provided by the person behind the site.
+export function serviceJsonLd(service: ServiceOffer & { page: string }, name: string) {
+  return {
+    "@type": "Service",
+    "@id": `${absoluteUrl(service.page)}#service`,
+    name,
+    serviceType: service.title,
+    description: service.description,
+    url: absoluteUrl(service.page),
+    areaServed: "Worldwide",
+    provider: { "@id": personId, "@type": "Person", name: siteConfig.author },
+    offers: serviceOffer(service),
+  };
+}
+
+export function articleJsonLd({ title, description, path, updated }: { title: string; description: string; path: string; updated: string }) {
+  return {
+    "@type": "Article",
+    headline: title,
+    description,
+    url: absoluteUrl(path),
+    mainEntityOfPage: absoluteUrl(path),
+    dateModified: updated,
+    image: absoluteUrl("/opengraph-image"),
+    author: { "@id": personId, "@type": "Person", name: siteConfig.author, url: `${siteUrl}/` },
+    publisher: { "@id": personId },
   };
 }
 
