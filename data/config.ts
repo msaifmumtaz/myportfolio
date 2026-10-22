@@ -17,6 +17,7 @@ export const siteConfig = {
     "Full Stack Developer",
     "AI Engineer",
     "Server Management",
+    "PHP Security Patching",
     "Machine Learning",
     "Generative AI",
     "LLM",
@@ -227,6 +228,7 @@ export const servicesContent = {
     { id: "ai", title: "AI systems", text: "RAG systems that answer from your own documents, automations that take repetitive work off your team, and chatbots for your website." },
     { id: "web", title: "Websites & stores", text: "Fast business websites and Shopify stores, built, deployed and ready to rank." },
     { id: "apple", title: "iOS & macOS apps", text: "Native Swift and SwiftUI apps for iPhone, iPad and Mac." },
+    { id: "servers", title: "Server security", text: "Security patching for the servers your sites and apps run on, including old PHP versions that no longer get official fixes." },
   ],
   packages: [
     {
@@ -336,6 +338,21 @@ export const servicesContent = {
       icon: "Smartphone",
       case_study: "folio-pdf",
     },
+    {
+      slug: "php-security-patching",
+      category: "servers",
+      title: "PHP Security Patching",
+      price: "$100 – $1,200",
+      price_note: "one-time, based on scope",
+      description: "Your servers patched against critical PHP vulnerabilities such as CVE-2026-109618 and CVE-2026-109619. Supported versions get the official update. Old PHP versions get the fix backported and compiled into a patched build, and your own code is fixed where it's exposed too.",
+      includes: ["An audit of every PHP version, SAPI and server you run", "Updates to the fixed official release where your PHP version is still supported", "Patched builds for old PHP versions (7.4, 8.0, 8.1, and older ported by hand)", "Fixes in your own code where a vulnerability can reach it", "Before-and-after testing, a rollback plan and a written report"],
+      scope: {
+        you_pay: ["Server, hosting and any control panel licences", "Paid extended-support PHP builds, if you choose one instead of a backport"],
+        not_included: ["Shared hosting where you have no root access (your host has to patch PHP)", "A full penetration test, incident response or malware clean-up, quoted separately", "Upgrading your application to a newer PHP version, quoted separately"],
+      },
+      icon: "ShieldCheck",
+      page: "/services/php-security-patching",
+    },
   ],
   retainer: {
     slug: "monthly-ai-engineering",
@@ -370,6 +387,7 @@ export const footerContent = {
         { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
         { label: "AI Chatbot Development", href: "/services/ai-chatbot-development" },
         { label: "iOS & macOS Apps", href: "/services#ios-macos-app" },
+        { label: "PHP Security Patching", href: "/services/php-security-patching" },
         { label: "Guides", href: "/guides" },
       ]
     },

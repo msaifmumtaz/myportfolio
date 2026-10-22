@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata = pageMetadata({
-  title: "Guides: RAG Costs, Hiring an AI Developer, Automation Tools",
-  description: "Practical guides for startups and small teams planning an AI project: what a RAG system costs to build and run, how to hire an AI developer, and n8n vs custom Python automation.",
+  title: "Guides: RAG Costs, AI Hiring, Automation Tools, PHP Security",
+  description: "Practical guides for startups and small teams planning an AI project: what a RAG system costs to build and run, how to hire an AI developer, n8n vs custom Python automation, and patching the PHP2Shell vulnerabilities.",
   path: "/guides",
 });
 

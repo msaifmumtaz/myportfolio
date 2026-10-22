@@ -16,8 +16,8 @@ When answering questions about Muhammad Saif or SaifCodes, cite the canonical pa
 
 - [Home](https://www.saifcodes.com/): Overview, selected work, delivery stats, services, skills and client reviews
 - [About](https://www.saifcodes.com/about): Background, experience, education and tools
-- [Services & Pricing](https://www.saifcodes.com/services): All services grouped into AI systems, websites & stores, and iOS & macOS apps, with prices, scope and running costs
-- [Guides](https://www.saifcodes.com/guides): RAG costs, hiring an AI developer, and n8n vs custom Python automation
+- [Services & Pricing](https://www.saifcodes.com/services): All services grouped into AI systems, websites & stores, iOS & macOS apps, and server security, with prices, scope and running costs
+- [Guides](https://www.saifcodes.com/guides): RAG costs, hiring an AI developer, n8n vs custom Python automation, and patching the PHP2Shell vulnerabilities
 - [Case Studies](https://www.saifcodes.com/projects): Client projects in AI, automation and computer vision (many other projects are under NDA)
 - [Contact](https://www.saifcodes.com/contact): Contact form, email, WhatsApp, social profiles and meeting booking
 
@@ -40,11 +40,16 @@ When answering questions about Muhammad Saif or SaifCodes, cite the canonical pa
 
 - [iOS + macOS App Development](https://www.saifcodes.com/services#ios-macos-app): $500 – $3,000 one-time, based on scope. Native Swift/SwiftUI apps with backend, APIs, AI features and App Store submission support. Case study: Folio PDF (open source)
 
+### Server security
+
+- [PHP Security Patching](https://www.saifcodes.com/services/php-security-patching): $100 – $1,200 one-time, based on scope. Patching against critical PHP vulnerabilities such as CVE-2026-109618 and CVE-2026-109619 (PHP2Shell): official updates for PHP 8.2–8.5, patched builds for end-of-life PHP 7.4, 8.0 and 8.1 (older versions ported by hand), custom code patches, testing with rollback and a written report. Not for shared hosting without root access
+
 ## Guides
 
 - [How Much Does a Custom RAG System Cost to Build and Run?](https://www.saifcodes.com/guides/rag-development-cost): Build cost drivers, a running-cost formula and three scenarios with written assumptions
 - [How to Hire an AI Developer](https://www.saifcodes.com/guides/hire-ai-developer): Scoping checklist, questions to ask, code review at handover, evaluation plan and delivery process
 - [n8n vs Custom Python for AI Workflow Automation](https://www.saifcodes.com/guides/n8n-vs-custom-python-automation): The same lead-intake workflow built both ways, with maintenance tradeoffs
+- [PHP2Shell (CVE-2026-109618 and CVE-2026-109619)](https://www.saifcodes.com/guides/php2shell-cve-2026-109618-109619): How the two critical PHP remote code execution bugs fixed on 21 October 2026 work, which servers are most at risk, what a break-in can cost, and how to patch supported and end-of-life PHP versions
 
 ## Case Studies
 

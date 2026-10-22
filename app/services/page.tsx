@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Bot, Check, FileSearch, Globe, Newspaper, ShoppingBag, Smartphone, Workflow, type LucideIcon } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Bot, Check, FileSearch, Globe, Newspaper, ShieldCheck, ShoppingBag, Smartphone, Workflow, type LucideIcon } from "lucide-react";
 import { servicesContent } from "@/data/config";
 import { getGuides } from "@/lib/guides";
 import { buttonClass } from "@/components/ui/button";
@@ -10,11 +10,11 @@ import { pageMetadata, servicesJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Services & Pricing – RAG, AI Automation, Web & Apps",
-  description: "Custom RAG development and AI workflow automation for startups and small teams, plus AI chatbots, websites, Shopify stores and iOS & macOS apps. Clear prices and defined scope.",
+  description: "Custom RAG development and AI workflow automation for startups and small teams, plus AI chatbots, websites, Shopify stores, iOS & macOS apps and PHP security patching. Clear prices and defined scope.",
   path: "/services",
 });
 
-const icons: Record<string, LucideIcon> = { FileSearch, Workflow, Globe, ShoppingBag, Bot, Smartphone, Newspaper };
+const icons: Record<string, LucideIcon> = { FileSearch, Workflow, Globe, ShoppingBag, Bot, Smartphone, Newspaper, ShieldCheck };
 
 export default function ServicesPage() {
   const { intro, categories, packages, retainer } = servicesContent;

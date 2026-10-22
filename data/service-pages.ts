@@ -208,6 +208,60 @@ export const servicePages: ServicePage[] = [
     ],
     guides: ["rag-development-cost", "hire-ai-developer"],
   },
+  {
+    slug: "php-security-patching",
+    package: "php-security-patching",
+    updated: "2026-10-22",
+    seo_title: "PHP Security Patching for CVE-2026-109618 and CVE-2026-109619",
+    seo_description: "Get your servers patched against the PHP2Shell remote code execution bugs. Official updates for PHP 8.2 to 8.5, patched builds for old PHP versions such as 7.4, 8.0 and 8.1, and fixes in your own code. $100 to $1,200.",
+    eyebrow: "PHP security patching",
+    title: "Your PHP servers patched against PHP2Shell, including old PHP versions",
+    intro: "CVE-2026-109618 and CVE-2026-109619 let anyone who can reach your website run code on your server without logging in. I patch every PHP version you run: supported versions get the official update, old versions get the fix backported into a patched build of the same version, and your own code is fixed where an attack can reach it.",
+    fit: {
+      good: [
+        "You run PHP on a VPS, a dedicated server, containers or cloud instances you have root access to",
+        "Some sites are stuck on PHP 7.4, 8.0 or 8.1 and can't be upgraded this week",
+        "You use Apache with mod_php, the setup most at risk",
+        "You want the work checked and written up, not just a package update run",
+      ],
+      not: [
+        "You're on shared hosting without root access. Only your host can patch PHP there",
+        "Your server is already compromised. That needs incident response and a rebuild first, quoted separately",
+        "You want your app moved to a newer PHP version. That's an upgrade project, quoted separately",
+      ],
+    },
+    how: {
+      heading: "How I patch your servers",
+      intro: "The same steps whether you have one server or twenty. The guide below explains the vulnerabilities themselves.",
+      items: [
+        { title: "Audit", text: "I list every server, container image and PHP version you run, how PHP is connected to the web server (mod_php, PHP-FPM, LiteSpeed or FrankenPHP), and whether your packages already contain the fix. Distributions often fix PHP without changing the version number, so I check the package changelog, not just the version." },
+        { title: "Mitigate first", text: "Before changing any binaries, I turn off session upload progress and tighten request limits at server level, so the known attack routes are closed within minutes while the real fix is prepared." },
+        { title: "Official updates", text: "PHP 8.2, 8.3, 8.4 and 8.5 are updated to the fixed releases (8.2.35, 8.3.36, 8.4.27, 8.5.12) or your distribution's patched packages. Then PHP-FPM, Apache, queue workers and other long-running PHP processes are restarted, so no worker is left running the old code." },
+        { title: "Patched builds for old PHP", text: "For PHP 7.4, 8.0 and 8.1, I compile PHP from the PHP project's own backport branches, with the same version, extensions and build options as your current install. Your app runs on the same PHP version with the security fix added. For older versions with no published backport, I port the fix to the old source by hand." },
+        { title: "Custom code patches", text: "I review the parts of your application that attackers can push into running out of memory, such as upload handlers and endpoints that parse large input, and add size limits, web server request limits and least-privilege file permissions where they're missing." },
+        { title: "Test, switch over, report", text: "The patched PHP is installed alongside the current one and tested with your sites before switching over, with a rollback plan if anything breaks. You get a written report covering each server, what was changed, how the fix was verified and what still needs upgrading." },
+      ],
+    },
+    costs: {
+      heading: "What it costs",
+      intro: "One fixed price, agreed in writing after a quick look at your setup. These are the usual price points.",
+      rows: [
+        { cost: "Quick patch", paid_to: "Me, one time: $100", detail: "One server on a supported PHP version (8.2 to 8.5): audit, mitigation settings, the official update, restarting every PHP process, and a short report." },
+        { cost: "Old PHP version", paid_to: "Me, one time: $300 – $600", detail: "A patched build of PHP 7.4, 8.0 or 8.1 with your exact extensions, installed alongside the current PHP, tested with your sites, switched over with a rollback plan. The price depends on how unusual the build is and how many servers get it." },
+        { cost: "Full hardening", paid_to: "Me, one time: up to $1,200", detail: "Several servers or container images, mixed PHP versions, hand-ported fixes for PHP older than 7.4, and custom code patches in your application, plus a check for signs of compromise on servers exposed before patching." },
+        { cost: "Your providers", paid_to: "You, directly", detail: "Server and hosting costs, control panel licences, and extended-support PHP builds if you'd rather buy one than use a backport." },
+      ],
+    },
+    faqs: [
+      { q: "Can't I just run apt upgrade?", a: "On a supported PHP version from a patched repository, mostly yes, and the guide below shows how. The usual misses are workers that weren't restarted, a second PHP version on the same server, container images that weren't rebuilt, and hosting panels that ship their own PHP builds. The $100 patch covers all of that." },
+      { q: "Is a backported PHP build safe to run?", a: "It's built from the PHP project's own backport branches where they exist, with your existing version and extensions, and tested before switching over. It closes these two vulnerabilities, but old PHP versions have other unfixed bugs, so I'd still plan an upgrade to a supported version." },
+      { q: "Will patching break my site?", a: "The official update and a backported build keep the same PHP version, so applications rarely notice. I test before switching over and keep the old binaries ready, so rolling back takes minutes if anything does break." },
+      { q: "What access do you need?", a: "SSH with sudo on each server, or access to your container build pipeline. I work on accounts you control and can use a temporary user that you remove afterwards." },
+      { q: "Can you tell if we were already hacked?", a: "The full hardening package includes a check for common signs of compromise, such as new PHP files, unexpected cron jobs and suspicious processes. If something turns up, cleaning up and rebuilding the server is quoted separately, and secrets should be rotated." },
+      { q: "Do you patch other PHP vulnerabilities too?", a: "Yes. The same approach works for any PHP security release: audit, mitigate, update or backport, test and report." },
+    ],
+    guides: ["php2shell-cve-2026-109618-109619"],
+  },
 ];
 
 // Shared by every service page: how a project runs from first call to handover.
